@@ -10,9 +10,19 @@ config_version=5
 
 [application]
 
-config/name="proyecto-tp-juego-2d"
+config/name="Proyecto TP Juego 2d"
+config/version="0.0.1"
+run/main_scene="uid://nhodagmwyf1x"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1366
+window/size/viewport_height=768
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
 
 [rendering]
 
