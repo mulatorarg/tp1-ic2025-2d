@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2k2isc2hgrn1"]
+
+[ext_resource type="Script" uid="uid://bokxt4k7vnyac" path="res://components/enemies/kala.gd" id="1_jyq8c"]
+[ext_resource type="Texture2D" uid="uid://74dd8jf2q1r" path="res://assets/kala.png" id="2_kwlr3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj4ed"]
+size = Vector2(104, 128)
+
+[node name="Kala" type="Area2D" groups=["enemies"]]
+scale = Vector2(0.5, 0.5)
+collision_layer = 8
+collision_mask = 20
+script = ExtResource("1_jyq8c")
+speed = 60
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kwlr3")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(68, 64)
+shape = SubResource("RectangleShape2D_oj4ed")

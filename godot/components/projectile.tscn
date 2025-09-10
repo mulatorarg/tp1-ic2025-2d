@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgljvjeje4l4b"]
+
+[ext_resource type="Script" uid="uid://7e3dnugfnnb2" path="res://components/projectile.gd" id="1_wgijb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgijb"]
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_wgijb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wgijb")

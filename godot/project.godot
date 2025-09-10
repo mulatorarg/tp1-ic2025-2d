@@ -12,17 +12,31 @@ config_version=5
 
 config/name="Proyecto TP Juego 2d"
 config/version="0.0.1"
-run/main_scene="uid://nhodagmwyf1x"
+run/main_scene="uid://ccvxvovy51cap"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/image="uid://rpdq748a1u6b"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=1000
 
 [display]
 
 window/size/viewport_width=1366
 window/size/viewport_height=768
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
+
+[global_group]
+
+enemies="Se agrupan los enemigos del juego"
+
+[layer_names]
+
+2d_physics/layer_1="Terreno"
+2d_physics/layer_2="Ambiente"
+2d_physics/layer_3="Guardianes"
+2d_physics/layer_4="Enemigos"
+2d_physics/layer_5="Interactivos"
 
 [rendering]
 

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://wlv8jp40sblc"]
+
+[ext_resource type="Script" uid="uid://cn0hda4k53aka" path="res://components/guardianes/ndaaye.gd" id="1_bcpls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcpls"]
+
+[node name="Ndaaye" type="Area2D"]
+script = ExtResource("1_bcpls")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bcpls")

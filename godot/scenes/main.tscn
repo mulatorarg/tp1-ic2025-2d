@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccvxvovy51cap"]
+
+[ext_resource type="Script" uid="uid://bqssb7nwdcjo4" path="res://scenes/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://rw6ehngtf03y" path="res://components/hud.tscn" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://lxa0oslvk351" path="res://assets/nivel1b.png" id="3_tbgi4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sugp2"]
+bg_color = Color(0.521587, 0, 0.118149, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyhfs"]
+bg_color = Color(0, 0.275677, 0.074219, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_27y2h"]
+normal = Vector2(-0.957826, -0.287348)
+distance = -46.9335
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("enemigos_puntos")]
+script = ExtResource("1_sugp2")
+enemigos_puntos = [NodePath("EnemiesPositions/Marker2D1"), NodePath("EnemiesPositions/Marker2D2"), NodePath("EnemiesPositions/Marker2D3"), NodePath("EnemiesPositions/Marker2D4"), NodePath("EnemiesPositions/Marker2D5")]
+
+[node name="EnemyTimer" type="Timer" parent="."]
+
+[node name="Hud" parent="." instance=ExtResource("2_jyhfs")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Hud"]
+custom_minimum_size = Vector2(0, 30)
+offset_left = 537.0
+offset_top = 15.0
+offset_right = 1066.0
+offset_bottom = 38.0
+
+[node name="EnemiesLabel" type="Label" parent="Hud/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+text = "Enemigos"
+
+[node name="EnemiesProgressBar" type="ProgressBar" parent="Hud/HBoxContainer"]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+size_flags_vertical = 5
+show_percentage = false
+
+[node name="VidasLabel" type="Label" parent="Hud/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+text = "Vidas"
+
+[node name="VidasProgressBar" type="ProgressBar" parent="Hud/HBoxContainer"]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_styles/background = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jyhfs")
+show_percentage = false
+
+[node name="PerdisteLabel" type="Label" parent="Hud"]
+offset_left = 669.0
+offset_top = 331.0
+offset_right = 1011.0
+offset_bottom = 434.0
+theme_override_colors/font_color = Color(1, 0, 0.0980392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "¡¡ PERDISTE !!
+Usurparon tu choza"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(214, 0)
+texture = ExtResource("3_tbgi4")
+centered = false
+
+[node name="EnemiesPositions" type="Node2D" parent="."]
+
+[node name="Marker2D1" type="Marker2D" parent="EnemiesPositions"]
+position = Vector2(1330, 256)
+
+[node name="Marker2D2" type="Marker2D" parent="EnemiesPositions"]
+position = Vector2(1330, 302)
+
+[node name="Marker2D3" type="Marker2D" parent="EnemiesPositions"]
+position = Vector2(1330, 350)
+
+[node name="Marker2D4" type="Marker2D" parent="EnemiesPositions"]
+position = Vector2(1330, 412)
+
+[node name="Marker2D5" type="Marker2D" parent="EnemiesPositions"]
+position = Vector2(1330, 470)
+
+[node name="LostArea" type="Area2D" parent="."]
+position = Vector2(461, 376)
+rotation = -3.02762
+collision_layer = 17
+collision_mask = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LostArea"]
+shape = SubResource("WorldBoundaryShape2D_27y2h")
