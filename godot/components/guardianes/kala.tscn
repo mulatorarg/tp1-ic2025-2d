@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://befebk5wsccro"]
+[gd_scene load_steps=3 format=3 uid="uid://b5fkqbb7txbce"]
 
-[ext_resource type="Script" uid="uid://b00bth4myvc1f" path="res://components/guardianes/kala.gd" id="1_fnfba"]
+[sub_resource type="GDScript" id="GDScript_8uteq"]
+script/source = "extends Area2D
+
+@export var health := 200
+
+func take_damage(amount):
+	health -= amount
+	if health <= 0:
+		queue_free()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxg6s"]
 
 [node name="Kala" type="Area2D"]
-script = ExtResource("1_fnfba")
+script = SubResource("GDScript_8uteq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

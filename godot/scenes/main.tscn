@@ -23,7 +23,7 @@ enemigos_puntos = [NodePath("EnemiesPositions/Marker2D1"), NodePath("EnemiesPosi
 [node name="Hud" parent="." instance=ExtResource("2_jyhfs")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Hud"]
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 24)
 offset_left = 537.0
 offset_top = 15.0
 offset_right = 1066.0
