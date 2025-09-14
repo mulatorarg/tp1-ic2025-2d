@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doty0p1crbam6"
-path="res://.godot/imported/splash.png-8aa957744d9f4b764dd4680b37c88571.ctex"
+uid="uid://cj5jqhb5402l3"
+path="res://.godot/imported/guardianes.png-b11fe7cf9adcb6ed10154b513274046f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/splash.png"
-dest_files=["res://.godot/imported/splash.png-8aa957744d9f4b764dd4680b37c88571.ctex"]
+source_file="res://assets/guardianes/guardianes.png"
+dest_files=["res://.godot/imported/guardianes.png-b11fe7cf9adcb6ed10154b513274046f.ctex"]
 
 [params]
 

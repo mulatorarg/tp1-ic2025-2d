@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doty0p1crbam6"
-path="res://.godot/imported/splash.png-8aa957744d9f4b764dd4680b37c88571.ctex"
+uid="uid://3pv0jhqf6jl6"
+path="res://.godot/imported/aoao.png-348582941244b95c9a38e8ea41ee5582.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/splash.png"
-dest_files=["res://.godot/imported/splash.png-8aa957744d9f4b764dd4680b37c88571.ctex"]
+source_file="res://assets/enemigos/aoao.png"
+dest_files=["res://.godot/imported/aoao.png-348582941244b95c9a38e8ea41ee5582.ctex"]
 
 [params]
 

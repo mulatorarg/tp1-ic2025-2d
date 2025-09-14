@@ -1,0 +1,112 @@
+[gd_scene load_steps=12 format=3 uid="uid://b2k2isc2hgrn1"]
+
+[ext_resource type="Script" uid="uid://bokxt4k7vnyac" path="res://components/enemies/aoao.gd" id="1_jyq8c"]
+[ext_resource type="Texture2D" uid="uid://3pv0jhqf6jl6" path="res://assets/enemigos/aoao.png" id="2_btstc"]
+[ext_resource type="Material" uid="uid://bdu4eb5c6wgqa" path="res://components/efectos/explosion_enemy.tres" id="3_btstc"]
+[ext_resource type="Texture2D" uid="uid://7kbuw187kh36" path="res://assets/sfx/explosion.png" id="3_psyu3"]
+[ext_resource type="Material" uid="uid://cj5q0eejg6mkr" path="res://components/efectos/damage_effect.tres" id="4_fto6i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj4ed"]
+size = Vector2(112, 182)
+
+[sub_resource type="Animation" id="Animation_kwlr3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jyq8c"]
+resource_name = "win"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kwlr3"]
+_data = {
+&"RESET": SubResource("Animation_kwlr3"),
+&"win": SubResource("Animation_jyq8c")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btstc"]
+bg_color = Color(0.705882, 0, 0.117647, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fto6i"]
+bg_color = Color(0, 0.705882, 0.117647, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="AoAo" type="Area2D" groups=["enemies"]]
+scale = Vector2(0.5, 0.5)
+collision_layer = 8
+collision_mask = 20
+script = ExtResource("1_jyq8c")
+nombre = "Ao Ao"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_btstc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_oj4ed")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kwlr3")
+}
+
+[node name="GPUParticles2D1" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 30
+texture = ExtResource("3_psyu3")
+explosiveness = 0.6
+randomness = 1.0
+process_material = ExtResource("3_btstc")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+process_material = ExtResource("4_fto6i")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -62.0
+offset_top = -136.0
+offset_right = 64.0
+offset_bottom = -113.0
+text = "Ao Ao"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -64.0
+offset_top = -108.0
+offset_right = 64.0
+offset_bottom = -90.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_btstc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fto6i")
+value = 100.0
+show_percentage = false

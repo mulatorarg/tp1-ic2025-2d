@@ -1,13 +1,128 @@
-[gd_scene load_steps=3 format=3 uid="uid://wlv8jp40sblc"]
+[gd_scene load_steps=14 format=3 uid="uid://wlv8jp40sblc"]
 
 [ext_resource type="Script" uid="uid://cn0hda4k53aka" path="res://components/guardianes/ndaaye.gd" id="1_bcpls"]
+[ext_resource type="Texture2D" uid="uid://cgftstbd2i5bf" path="res://assets/guardianes/ndaaye.png" id="2_f5vo3"]
+[ext_resource type="Texture2D" uid="uid://7kbuw187kh36" path="res://assets/sfx/explosion.png" id="3_wshmw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcpls"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wshmw"]
+size = Vector2(112, 182)
+
+[sub_resource type="Animation" id="Animation_kwlr3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jyq8c"]
+resource_name = "win"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kwlr3"]
+_data = {
+&"RESET": SubResource("Animation_kwlr3"),
+&"win": SubResource("Animation_jyq8c")
+}
+
+[sub_resource type="CurveTexture" id="CurveTexture_kwlr3"]
+
+[sub_resource type="Gradient" id="Gradient_3ekg8"]
+offsets = PackedFloat32Array(0.448485, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.054902, 1, 0, 0.0784314)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2w218"]
+gradient = SubResource("Gradient_3ekg8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_63uyj"]
+particle_flag_disable_z = true
+angle_min = -90.0
+angle_max = 90.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -50.0
+linear_accel_max = 50.0
+radial_accel_min = -20.0
+radial_accel_max = 20.0
+tangential_accel_min = -30.0
+tangential_accel_max = 30.0
+scale_min = 0.08
+scale_max = 0.2
+color_ramp = SubResource("GradientTexture1D_2w218")
+alpha_curve = SubResource("CurveTexture_kwlr3")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57drq"]
+bg_color = Color(0.705882, 0, 0.117647, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oj04"]
+bg_color = Color(0, 0.705882, 0.117647, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="Ndaaye" type="Area2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_bcpls")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_f5vo3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_bcpls")
+shape = SubResource("RectangleShape2D_wshmw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kwlr3")
+}
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(64, 64)
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 20
+texture = ExtResource("3_wshmw")
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_63uyj")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -62.0
+offset_top = -144.0
+offset_right = 64.0
+offset_bottom = -121.0
+text = "Guardian"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -64.0
+offset_top = -116.0
+offset_right = 64.0
+offset_bottom = -98.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_57drq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3oj04")
+value = 50.0
+show_percentage = false

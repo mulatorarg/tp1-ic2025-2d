@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doty0p1crbam6"
-path="res://.godot/imported/splash.png-8aa957744d9f4b764dd4680b37c88571.ctex"
+uid="uid://cwbx3jqwxcby8"
+path="res://.godot/imported/Kala.png-2912417df01d681f767aa8baf2fa5c74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/splash.png"
-dest_files=["res://.godot/imported/splash.png-8aa957744d9f4b764dd4680b37c88571.ctex"]
+source_file="res://assets/guardianes/Kala.png"
+dest_files=["res://.godot/imported/Kala.png-2912417df01d681f767aa8baf2fa5c74.ctex"]
 
 [params]
 

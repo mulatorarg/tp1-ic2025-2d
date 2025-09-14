@@ -1,49 +1,130 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccvxvovy51cap"]
+[gd_scene load_steps=19 format=3 uid="uid://ccvxvovy51cap"]
 
 [ext_resource type="Script" uid="uid://bqssb7nwdcjo4" path="res://scenes/main.gd" id="1_sugp2"]
-[ext_resource type="PackedScene" uid="uid://rw6ehngtf03y" path="res://components/hud.tscn" id="2_jyhfs"]
-[ext_resource type="Texture2D" uid="uid://lxa0oslvk351" path="res://assets/nivel1b.png" id="3_tbgi4"]
+[ext_resource type="Script" uid="uid://07pcpobppytl" path="res://scenes/hud.gd" id="3_85g3d"]
+[ext_resource type="Texture2D" uid="uid://cm028bsdn7pep" path="res://icon.svg" id="3_jyhfs"]
+[ext_resource type="Script" uid="uid://305wva1hlm2d" path="res://scenes/guardian_selected.gd" id="3_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://drwkwdw0um6yr" path="res://assets/nivel1.png" id="3_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://cgftstbd2i5bf" path="res://assets/guardianes/ndaaye.png" id="4_85g3d"]
+[ext_resource type="PackedScene" uid="uid://wlv8jp40sblc" path="res://components/guardianes/ndaaye.tscn" id="4_tipki"]
+[ext_resource type="Script" uid="uid://ctbmrq6copwx1" path="res://scenes/celda.gd" id="5_tbgi4"]
+[ext_resource type="Script" uid="uid://b0ewrhlsy1cj5" path="res://scenes/grilla.gd" id="5_tefeu"]
+[ext_resource type="Texture2D" uid="uid://dj1ox2twjqnyw" path="res://assets/ui/salud.png" id="8_choun"]
+[ext_resource type="Texture2D" uid="uid://cuw1qh4yx56r7" path="res://assets/ui/mana.png" id="9_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://c11hcwbtyts6e" path="res://assets/ui/energia.png" id="10_eb6dy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tipki"]
+bg_color = Color(0, 0, 0, 0.0392157)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sugp2"]
 bg_color = Color(0.521587, 0, 0.118149, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyhfs"]
 bg_color = Color(0, 0.275677, 0.074219, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb6dy"]
+bg_color = Color(0.324381, 1.99863e-05, 0.273097, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trceg"]
+bg_color = Color(0.46398, 4.33658e-05, 0.394445, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_27y2h"]
-normal = Vector2(-0.957826, -0.287348)
+normal = Vector2(-1, -0.4)
 distance = -46.9335
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("enemigos_puntos")]
 script = ExtResource("1_sugp2")
-enemigos_puntos = [NodePath("EnemiesPositions/Marker2D1"), NodePath("EnemiesPositions/Marker2D2"), NodePath("EnemiesPositions/Marker2D3"), NodePath("EnemiesPositions/Marker2D4"), NodePath("EnemiesPositions/Marker2D5")]
+enemigos_puntos = [NodePath("EnemigosPosiciones/Marker2D1"), NodePath("EnemigosPosiciones/Marker2D2"), NodePath("EnemigosPosiciones/Marker2D3"), NodePath("EnemigosPosiciones/Marker2D4"), NodePath("EnemigosPosiciones/Marker2D5"), NodePath("EnemigosPosiciones/Marker2D6")]
 
-[node name="EnemyTimer" type="Timer" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_tbgi4")
+centered = false
 
-[node name="Hud" parent="." instance=ExtResource("2_jyhfs")]
+[node name="Hud" type="CanvasLayer" parent="."]
+script = ExtResource("3_85g3d")
+
+[node name="LateralPanel" type="Panel" parent="Hud"]
+custom_minimum_size = Vector2(214, 0)
+anchors_preset = -1
+anchor_right = 0.157
+anchor_bottom = 1.0
+offset_right = -0.462006
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tipki")
+
+[node name="MarginContainer" type="MarginContainer" parent="Hud/LateralPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hud/LateralPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="guardian_selected_1" type="HBoxContainer" parent="Hud/LateralPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_o6xl0")
+guardian_scene = ExtResource("4_tipki")
+
+[node name="TextureRect" type="TextureRect" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("4_85g3d")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_1"]
+layout_mode = 2
+text = "Ndaaye"
+
+[node name="guardian_selected_2" type="HBoxContainer" parent="Hud/LateralPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_o6xl0")
+
+[node name="TextureRect" type="TextureRect" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_jyhfs")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_2"]
+layout_mode = 2
+text = "Guarnian 2"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Hud"]
 custom_minimum_size = Vector2(0, 24)
-offset_left = 537.0
+offset_left = 352.0
 offset_top = 15.0
-offset_right = 1066.0
-offset_bottom = 38.0
+offset_right = 1080.0
+offset_bottom = 39.0
 
-[node name="EnemiesLabel" type="Label" parent="Hud/HBoxContainer"]
+[node name="SaludTexture" type="TextureRect" parent="Hud/HBoxContainer"]
+clip_contents = true
 layout_mode = 2
-size_flags_vertical = 5
-text = "Enemigos"
-
-[node name="EnemiesProgressBar" type="ProgressBar" parent="Hud/HBoxContainer"]
-custom_minimum_size = Vector2(200, 20)
-layout_mode = 2
-size_flags_vertical = 5
-show_percentage = false
-
-[node name="VidasLabel" type="Label" parent="Hud/HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 5
-text = "Vidas"
+texture = ExtResource("8_choun")
+expand_mode = 3
 
 [node name="VidasProgressBar" type="ProgressBar" parent="Hud/HBoxContainer"]
 custom_minimum_size = Vector2(200, 20)
@@ -51,6 +132,45 @@ layout_mode = 2
 size_flags_vertical = 5
 theme_override_styles/background = SubResource("StyleBoxFlat_sugp2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_jyhfs")
+value = 30.0
+show_percentage = false
+
+[node name="ManaTexture" type="TextureRect" parent="Hud/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+texture = ExtResource("9_ya4ey")
+expand_mode = 3
+
+[node name="ManaLabel" type="Label" parent="Hud/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="EnergiaTexture" type="TextureRect" parent="Hud/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+texture = ExtResource("10_eb6dy")
+expand_mode = 3
+
+[node name="EnergiaLabel" type="Label" parent="Hud/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Separador" type="Panel" parent="Hud/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="EnemigosLabel" type="Label" parent="Hud/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+text = "Enemigos"
+
+[node name="EnemigosProgressBar" type="ProgressBar" parent="Hud/HBoxContainer"]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_styles/background = SubResource("StyleBoxFlat_eb6dy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_trceg")
+value = 40.0
 show_percentage = false
 
 [node name="PerdisteLabel" type="Label" parent="Hud"]
@@ -69,34 +189,532 @@ text = "¡¡ PERDISTE !!
 Usurparon tu choza"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(214, 0)
-texture = ExtResource("3_tbgi4")
-centered = false
+[node name="EnemigosTimer" type="Timer" parent="."]
+wait_time = 3.0
 
-[node name="EnemiesPositions" type="Node2D" parent="."]
+[node name="EnemigosPosiciones" type="Node2D" parent="."]
 
-[node name="Marker2D1" type="Marker2D" parent="EnemiesPositions"]
-position = Vector2(1330, 256)
+[node name="Marker2D1" type="Marker2D" parent="EnemigosPosiciones"]
+position = Vector2(1330, 226)
 
-[node name="Marker2D2" type="Marker2D" parent="EnemiesPositions"]
-position = Vector2(1330, 302)
+[node name="Marker2D2" type="Marker2D" parent="EnemigosPosiciones"]
+position = Vector2(1330, 282)
 
-[node name="Marker2D3" type="Marker2D" parent="EnemiesPositions"]
-position = Vector2(1330, 350)
+[node name="Marker2D3" type="Marker2D" parent="EnemigosPosiciones"]
+position = Vector2(1330, 344)
 
-[node name="Marker2D4" type="Marker2D" parent="EnemiesPositions"]
-position = Vector2(1330, 412)
+[node name="Marker2D4" type="Marker2D" parent="EnemigosPosiciones"]
+position = Vector2(1330, 408)
 
-[node name="Marker2D5" type="Marker2D" parent="EnemiesPositions"]
-position = Vector2(1330, 470)
+[node name="Marker2D5" type="Marker2D" parent="EnemigosPosiciones"]
+position = Vector2(1330, 480)
 
-[node name="LostArea" type="Area2D" parent="."]
-position = Vector2(461, 376)
+[node name="Marker2D6" type="Marker2D" parent="EnemigosPosiciones"]
+position = Vector2(1330, 568)
+
+[node name="PerderArea" type="Area2D" parent="."]
+position = Vector2(416, 376)
 rotation = -3.02762
 collision_layer = 17
 collision_mask = 8
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LostArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PerderArea"]
+position = Vector2(150, 0)
 shape = SubResource("WorldBoundaryShape2D_27y2h")
+
+[node name="Grilla" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("5_tefeu")
+
+[node name="Fila_0_Col_0" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 304.0
+offset_top = 226.0
+offset_right = 394.0
+offset_bottom = 276.0
+script = ExtResource("5_tbgi4")
+
+[node name="Fila_0_Col_1" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 408.0
+offset_top = 226.0
+offset_right = 498.0
+offset_bottom = 276.0
+script = ExtResource("5_tbgi4")
+col = 1
+
+[node name="Fila_0_Col_2" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 520.0
+offset_top = 226.0
+offset_right = 610.0
+offset_bottom = 276.0
+script = ExtResource("5_tbgi4")
+col = 2
+
+[node name="Fila_0_Col_3" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 626.0
+offset_top = 226.0
+offset_right = 716.0
+offset_bottom = 276.0
+script = ExtResource("5_tbgi4")
+col = 3
+
+[node name="Fila_0_Col_4" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 728.0
+offset_top = 226.0
+offset_right = 818.0
+offset_bottom = 276.0
+script = ExtResource("5_tbgi4")
+col = 4
+
+[node name="Fila_0_Col_5" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 832.0
+offset_top = 226.0
+offset_right = 922.0
+offset_bottom = 276.0
+script = ExtResource("5_tbgi4")
+col = 5
+
+[node name="Fila_0_Col_6" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 936.0
+offset_top = 226.0
+offset_right = 1026.0
+offset_bottom = 276.0
+script = ExtResource("5_tbgi4")
+col = 6
+
+[node name="Fila_1_Col_0" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 280.0
+offset_top = 282.0
+offset_right = 370.0
+offset_bottom = 332.0
+script = ExtResource("5_tbgi4")
+row = 1
+
+[node name="Fila_1_Col_1" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 392.0
+offset_top = 282.0
+offset_right = 492.0
+offset_bottom = 332.0
+script = ExtResource("5_tbgi4")
+row = 1
+col = 1
+
+[node name="Fila_1_Col_2" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 512.0
+offset_top = 282.0
+offset_right = 602.0
+offset_bottom = 332.0
+script = ExtResource("5_tbgi4")
+row = 1
+col = 2
+
+[node name="Fila_1_Col_3" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 620.0
+offset_top = 282.0
+offset_right = 710.0
+offset_bottom = 332.0
+script = ExtResource("5_tbgi4")
+row = 1
+col = 3
+
+[node name="Fila_1_Col_4" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 736.0
+offset_top = 282.0
+offset_right = 826.0
+offset_bottom = 332.0
+script = ExtResource("5_tbgi4")
+row = 1
+col = 4
+
+[node name="Fila_1_Col_5" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 843.0
+offset_top = 282.0
+offset_right = 933.0
+offset_bottom = 332.0
+script = ExtResource("5_tbgi4")
+row = 1
+col = 5
+
+[node name="Fila_1_Col_6" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 960.0
+offset_top = 282.0
+offset_right = 1050.0
+offset_bottom = 332.0
+script = ExtResource("5_tbgi4")
+row = 1
+col = 6
+
+[node name="Fila_2_Col_0" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 248.0
+offset_top = 344.0
+offset_right = 348.0
+offset_bottom = 394.0
+script = ExtResource("5_tbgi4")
+row = 2
+
+[node name="Fila_2_Col_1" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 368.0
+offset_top = 344.0
+offset_right = 478.0
+offset_bottom = 394.0
+script = ExtResource("5_tbgi4")
+row = 2
+col = 1
+
+[node name="Fila_2_Col_2" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 496.0
+offset_top = 344.0
+offset_right = 596.0
+offset_bottom = 394.0
+script = ExtResource("5_tbgi4")
+row = 2
+col = 2
+
+[node name="Fila_2_Col_3" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 616.0
+offset_top = 344.0
+offset_right = 716.0
+offset_bottom = 394.0
+script = ExtResource("5_tbgi4")
+row = 2
+col = 3
+
+[node name="Fila_2_Col_4" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 736.0
+offset_top = 344.0
+offset_right = 836.0
+offset_bottom = 394.0
+script = ExtResource("5_tbgi4")
+row = 2
+col = 4
+
+[node name="Fila_2_Col_5" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 856.0
+offset_top = 344.0
+offset_right = 956.0
+offset_bottom = 394.0
+script = ExtResource("5_tbgi4")
+row = 2
+col = 5
+
+[node name="Fila_2_Col_6" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 976.0
+offset_top = 344.0
+offset_right = 1076.0
+offset_bottom = 394.0
+script = ExtResource("5_tbgi4")
+row = 2
+col = 6
+
+[node name="Fila_3_Col_0" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 216.0
+offset_top = 408.0
+offset_right = 326.0
+offset_bottom = 468.0
+script = ExtResource("5_tbgi4")
+row = 3
+
+[node name="Fila_3_Col_1" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 336.0
+offset_top = 408.0
+offset_right = 466.0
+offset_bottom = 468.0
+script = ExtResource("5_tbgi4")
+row = 3
+col = 1
+
+[node name="Fila_3_Col_2" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 480.0
+offset_top = 408.0
+offset_right = 590.0
+offset_bottom = 468.0
+script = ExtResource("5_tbgi4")
+row = 3
+col = 2
+
+[node name="Fila_3_Col_3" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 608.0
+offset_top = 408.0
+offset_right = 718.0
+offset_bottom = 468.0
+script = ExtResource("5_tbgi4")
+row = 3
+col = 3
+
+[node name="Fila_3_Col_4" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 739.0
+offset_top = 408.0
+offset_right = 849.0
+offset_bottom = 468.0
+script = ExtResource("5_tbgi4")
+row = 3
+col = 4
+
+[node name="Fila_3_Col_5" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 865.0
+offset_top = 408.0
+offset_right = 985.0
+offset_bottom = 468.0
+script = ExtResource("5_tbgi4")
+row = 3
+col = 5
+
+[node name="Fila_3_Col_6" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 999.0
+offset_top = 408.0
+offset_right = 1109.0
+offset_bottom = 468.0
+script = ExtResource("5_tbgi4")
+row = 3
+col = 6
+
+[node name="Fila_4_Col_0" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 176.0
+offset_top = 480.0
+offset_right = 296.0
+offset_bottom = 550.0
+script = ExtResource("5_tbgi4")
+row = 4
+
+[node name="Fila_4_Col_1" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 315.0
+offset_top = 480.0
+offset_right = 435.0
+offset_bottom = 550.0
+script = ExtResource("5_tbgi4")
+row = 4
+col = 1
+
+[node name="Fila_4_Col_2" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 456.0
+offset_top = 480.0
+offset_right = 576.0
+offset_bottom = 550.0
+script = ExtResource("5_tbgi4")
+row = 4
+col = 2
+
+[node name="Fila_4_Col_3" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 600.0
+offset_top = 480.0
+offset_right = 720.0
+offset_bottom = 550.0
+script = ExtResource("5_tbgi4")
+row = 4
+col = 3
+
+[node name="Fila_4_Col_4" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 744.0
+offset_top = 480.0
+offset_right = 864.0
+offset_bottom = 550.0
+script = ExtResource("5_tbgi4")
+row = 4
+col = 4
+
+[node name="Fila_4_Col_5" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 880.0
+offset_top = 480.0
+offset_right = 1000.0
+offset_bottom = 550.0
+script = ExtResource("5_tbgi4")
+row = 4
+col = 5
+
+[node name="Fila_4_Col_6" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 1016.0
+offset_top = 480.0
+offset_right = 1136.0
+offset_bottom = 550.0
+script = ExtResource("5_tbgi4")
+row = 4
+col = 6
+
+[node name="Fila_5_Col_0" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 128.0
+offset_top = 568.0
+offset_right = 258.0
+offset_bottom = 658.0
+script = ExtResource("5_tbgi4")
+row = 5
+
+[node name="Fila_5_Col_1" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 286.0
+offset_top = 568.0
+offset_right = 416.0
+offset_bottom = 658.0
+script = ExtResource("5_tbgi4")
+row = 5
+col = 1
+
+[node name="Fila_5_Col_2" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 432.0
+offset_top = 568.0
+offset_right = 572.0
+offset_bottom = 658.0
+script = ExtResource("5_tbgi4")
+row = 5
+col = 2
+
+[node name="Fila_5_Col_3" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 592.0
+offset_top = 568.0
+offset_right = 732.0
+offset_bottom = 658.0
+script = ExtResource("5_tbgi4")
+row = 5
+col = 3
+
+[node name="Fila_5_Col_4" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 744.0
+offset_top = 568.0
+offset_right = 874.0
+offset_bottom = 658.0
+script = ExtResource("5_tbgi4")
+row = 5
+col = 4
+
+[node name="Fila_5_Col_5" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 896.0
+offset_top = 568.0
+offset_right = 1026.0
+offset_bottom = 658.0
+script = ExtResource("5_tbgi4")
+row = 5
+col = 5
+
+[node name="Fila_5_Col_6" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 568.0
+offset_right = 1170.0
+offset_bottom = 658.0
+script = ExtResource("5_tbgi4")
+row = 5
+col = 5

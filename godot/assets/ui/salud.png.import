@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doty0p1crbam6"
-path="res://.godot/imported/splash.png-8aa957744d9f4b764dd4680b37c88571.ctex"
+uid="uid://dj1ox2twjqnyw"
+path="res://.godot/imported/salud.png-913537ce27d14cff0365ba72f9e7a899.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/splash.png"
-dest_files=["res://.godot/imported/splash.png-8aa957744d9f4b764dd4680b37c88571.ctex"]
+source_file="res://assets/ui/salud.png"
+dest_files=["res://.godot/imported/salud.png-913537ce27d14cff0365ba72f9e7a899.ctex"]
 
 [params]
 
