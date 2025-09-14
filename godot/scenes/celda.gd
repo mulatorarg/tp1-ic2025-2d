@@ -1,6 +1,6 @@
 extends Panel  
-class_name Celda
 ## Celda individual de la grilla de cada nivel.
+class_name Celda
 
 @export var row: int ## Fila que representa en la grilla.
 @export var col: int ## Columna que representa en la grilla.

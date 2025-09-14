@@ -1,9 +1,9 @@
 extends Area2D
 
-@export var velocidad : int = 100 ## Velocidad en que se mueve.
-@export var salud : int = 100 ## Cantidad de Vida inicial.
+@export var velocidad : int = 50 ## Velocidad en que se mueve.
+@export var salud : int = 50 ## Cantidad de Vida inicial.
 @export var nombre : String = "Enemigo" ## Nombre del Enemigo.
-@export var textura: Texture2D = preload("res://assets/enemigos/aoao.png")
+@export var textura: Texture2D = preload("res://assets/enemigos/aoao.png") ## Textura del enemigo
 
 @onready var gpu_particles_2d_1: GPUParticles2D = $GPUParticles2D1
 @onready var gpu_particles_2d_2: GPUParticles2D = $GPUParticles2D2
@@ -13,7 +13,7 @@ extends Area2D
 @onready var label: Label = $Label
 @onready var progress_bar: ProgressBar = $ProgressBar
 
-var salud_actual = 100
+var salud_actual = 50
 
 func _ready() -> void:
 	actualizar_ui()
@@ -31,8 +31,8 @@ func _process(delta):
 func le_hacen_daño(cantidad):
 	salud_actual -= cantidad
 	progress_bar.value = clamp(salud_actual, 0, salud)
-	print(salud_actual)
 	if salud_actual <= 0:
+		animation_player.play("morir")
 		collision_shape_2d.visible = false
 		label.visible = false
 		progress_bar.visible = false
@@ -42,7 +42,7 @@ func le_hacen_daño(cantidad):
 		queue_free()
 
 func llega_destino():
-	animation_player.play("win")
+	animation_player.play("ganar")
 	gpu_particles_2d_2.one_shot = true
 	gpu_particles_2d_2.restart()
 	await gpu_particles_2d_2.finished

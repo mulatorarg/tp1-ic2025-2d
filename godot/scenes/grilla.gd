@@ -1,4 +1,5 @@
 extends Control
+## Grilla.
 class_name Grilla
 
 @export var grilla_columnas := 7 ## Columnas de la grilla.

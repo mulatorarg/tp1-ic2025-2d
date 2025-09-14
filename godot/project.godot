@@ -14,7 +14,7 @@ config/name="Proyecto TP Juego 2d"
 config/version="0.0.1"
 run/main_scene="uid://ccvxvovy51cap"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-boot_splash/image="uid://doty0p1crbam6"
+boot_splash/image="uid://cm0gij7epvnvb"
 config/icon="uid://cgwyek42h322n"
 boot_splash/minimum_display_time=300
 
@@ -45,3 +45,4 @@ enemies="Se agrupan los enemigos del juego"
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

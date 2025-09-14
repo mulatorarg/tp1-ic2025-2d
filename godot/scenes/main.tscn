@@ -45,7 +45,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_27y2h"]
-normal = Vector2(-1, -0.4)
+normal = Vector2(-0.929598, -0.368576)
 distance = -46.9335
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("enemigos_puntos")]
@@ -213,15 +213,15 @@ position = Vector2(1330, 480)
 position = Vector2(1330, 568)
 
 [node name="PerderArea" type="Area2D" parent="."]
-position = Vector2(416, 376)
+position = Vector2(292, 366)
 rotation = -3.02762
 collision_layer = 17
 collision_mask = 8
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PerderArea"]
-position = Vector2(150, 0)
 shape = SubResource("WorldBoundaryShape2D_27y2h")
+metadata/_edit_lock_ = true
 
 [node name="Grilla" type="Control" parent="."]
 layout_mode = 3
