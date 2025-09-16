@@ -1,8 +1,11 @@
 extends Area2D
 
-@export var intervalo_ataque := 2.0 ## Distancia de Tiempo de disparo (en segundos).
+@export var intervalo_ataque := 2.0 ## Distancia de Tiempo entre disparos (se mide en segundos).
 @export var salud := 100 ## Cantidad de Vida inicial.
-@export var nombre := "AoAo" ## Nombre del Guardian.
+@export var nombre := "Ndaaye" ## Nombre del Guardian.
+
+@export var recurso_mana := 10 ## Cuanto de maná necesita para instanciar en la celda.
+@export var recurso_energia := 10 ## Cuanto de energía necesita para instanciar en la celda.
 
 @onready var GuardianDisparoScene = preload("res://components/guardian_disparo.tscn")
 
@@ -30,3 +33,6 @@ func atacar():
 	disparo.position = position
 	disparo.direction = Vector2.RIGHT
 	get_parent().add_child(disparo)
+
+func recursos_disponibles():
+	return GameManager.dispone_recursos({"mana": recurso_mana, "energia": recurso_energia})

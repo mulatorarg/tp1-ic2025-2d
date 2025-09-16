@@ -24,8 +24,8 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_psyu3"]
-resource_name = "morir"
+[sub_resource type="Animation" id="Animation_jyq8c"]
+resource_name = "ganar"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -40,8 +40,8 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_jyq8c"]
-resource_name = "ganar"
+[sub_resource type="Animation" id="Animation_psyu3"]
+resource_name = "morir"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false

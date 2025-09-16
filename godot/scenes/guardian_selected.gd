@@ -1,14 +1,22 @@
 extends HBoxContainer
+## Hemm.
+class_name GuardianSeleccion
 
-@export var guardian_scene:PackedScene
-@onready var icon:TextureRect = $TextureRect
+@export var guardian_scene: PackedScene
 #@export var color = Color(1, 0, 0, 1)
 
+@onready var icon: TextureRect = $TextureRect
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	if guardian_scene == null:
 		print_rich("[color=red]No se seleccionó Guardian.[/color]")
 		return null
+
+	var guardian = guardian_scene.instantiate()
+	if guardian.has_method("recursos_disponibles") and !guardian.recursos_disponibles():
+		print_rich("[color=red]Recursos insuficientes para agregar ese Guardian.[/color]")
+		return null
+
 	var preview := TextureRect.new()
 	preview.texture = icon.texture
 	preview.custom_minimum_size = Vector2(128, 180)
