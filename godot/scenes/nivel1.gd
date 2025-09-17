@@ -1,5 +1,6 @@
 extends Node2D
 ## Pantalla principal. Prueba de conceptos de arte y jugabilidad. Ponele...
+class_name Nivel1
 
 @export var enemigos_maximos := 8 ## Cantidad inicial de enemigos.
 @export var enemigos_puntos: Array[Marker2D] ## Puntos de partida de los enemigos.

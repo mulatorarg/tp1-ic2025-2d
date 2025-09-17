@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuw1qh4yx56r7"
-path="res://.godot/imported/mana.png-4cf8c0d93b153629f3452e799097d672.ctex"
+uid="uid://b2cqhwu6755yr"
+path="res://.godot/imported/Mockup_UI_Rubi_vs_LosSiete.png-86abdf8e1b1b076a905a605f757ae430.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/mana.png"
-dest_files=["res://.godot/imported/mana.png-4cf8c0d93b153629f3452e799097d672.ctex"]
+source_file="res://resources/Mockup_UI_Rubi_vs_LosSiete.png"
+dest_files=["res://.godot/imported/Mockup_UI_Rubi_vs_LosSiete.png-86abdf8e1b1b076a905a605f757ae430.ctex"]
 
 [params]
 

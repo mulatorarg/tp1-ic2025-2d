@@ -1,23 +1,72 @@
-[gd_scene load_steps=19 format=3 uid="uid://ccvxvovy51cap"]
+[gd_scene load_steps=27 format=3 uid="uid://dt5ippn7egc2f"]
 
-[ext_resource type="Script" uid="uid://bqssb7nwdcjo4" path="res://scenes/main.gd" id="1_sugp2"]
-[ext_resource type="Script" uid="uid://07pcpobppytl" path="res://scenes/hud.gd" id="3_85g3d"]
-[ext_resource type="Texture2D" uid="uid://cm028bsdn7pep" path="res://icon.svg" id="3_jyhfs"]
-[ext_resource type="Script" uid="uid://305wva1hlm2d" path="res://scenes/guardian_selected.gd" id="3_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://drwkwdw0um6yr" path="res://assets/nivel1.png" id="3_tbgi4"]
-[ext_resource type="Texture2D" uid="uid://cgftstbd2i5bf" path="res://assets/guardianes/ndaaye.png" id="4_85g3d"]
-[ext_resource type="PackedScene" uid="uid://wlv8jp40sblc" path="res://components/guardianes/ndaaye.tscn" id="4_tipki"]
-[ext_resource type="Script" uid="uid://ctbmrq6copwx1" path="res://scenes/celda.gd" id="5_tbgi4"]
-[ext_resource type="Script" uid="uid://b0ewrhlsy1cj5" path="res://scenes/grilla.gd" id="5_tefeu"]
-[ext_resource type="Texture2D" uid="uid://dj1ox2twjqnyw" path="res://assets/ui/salud.png" id="8_choun"]
-[ext_resource type="Texture2D" uid="uid://cuw1qh4yx56r7" path="res://assets/ui/mana.png" id="9_ya4ey"]
-[ext_resource type="Texture2D" uid="uid://c11hcwbtyts6e" path="res://assets/ui/energia.png" id="10_eb6dy"]
+[ext_resource type="Script" uid="uid://bq276sho2g2n6" path="res://scenes/nivel1.gd" id="1_nkjvb"]
+[ext_resource type="Texture2D" uid="uid://drwkwdw0um6yr" path="res://assets/nivel1.png" id="2_kkeat"]
+[ext_resource type="Script" uid="uid://07pcpobppytl" path="res://scenes/hud.gd" id="3_5u7j1"]
+[ext_resource type="Script" uid="uid://305wva1hlm2d" path="res://scenes/guardian_selected.gd" id="4_80s5i"]
+[ext_resource type="PackedScene" uid="uid://wlv8jp40sblc" path="res://components/guardianes/ndaaye.tscn" id="5_xjhar"]
+[ext_resource type="Texture2D" uid="uid://cgftstbd2i5bf" path="res://assets/guardianes/ndaaye.png" id="6_ofuir"]
+[ext_resource type="Texture2D" uid="uid://b5slffmylr58d" path="res://assets/guardianes/amaru.png" id="7_5u7j1"]
+[ext_resource type="FontFile" uid="uid://bjbgb2tkw7d04" path="res://assets/fonts/River Adventurer.ttf" id="7_80s5i"]
+[ext_resource type="Texture2D" uid="uid://dj1ox2twjqnyw" path="res://assets/ui/salud.png" id="8_4ewe0"]
+[ext_resource type="Texture2D" uid="uid://exdy2tsmglsr" path="res://assets/guardianes/Yvera.png" id="8_80s5i"]
+[ext_resource type="Texture2D" uid="uid://cwbx3jqwxcby8" path="res://assets/guardianes/Kala.png" id="9_xjhar"]
+[ext_resource type="Texture2D" uid="uid://cuw1qh4yx56r7" path="res://assets/ui/mana.png" id="9_xjwxr"]
+[ext_resource type="Texture2D" uid="uid://c11hcwbtyts6e" path="res://assets/ui/energia.png" id="10_nmr0y"]
+[ext_resource type="Script" uid="uid://b0ewrhlsy1cj5" path="res://scenes/grilla.gd" id="11_bonye"]
+[ext_resource type="Script" uid="uid://ctbmrq6copwx1" path="res://scenes/celda.gd" id="12_fs308"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tipki"]
 bg_color = Color(0, 0, 0, 0.0392157)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ma4t3"]
+bg_color = Color(0.870588, 0.870588, 0.870588, 0.784314)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.133333, 0.133333, 0.133333, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_detail = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_5u7j1"]
+font = ExtResource("7_80s5i")
+font_size = 20
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.431373)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkjvb"]
+bg_color = Color(0.870588, 0.870588, 0.870588, 0.784314)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.133333, 0.133333, 0.133333, 1)
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ofuir"]
+bg_color = Color(0.870588, 0.870588, 0.870588, 0.784314)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.133333, 0.133333, 0.133333, 1)
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkeat"]
+bg_color = Color(0.870588, 0.870588, 0.870588, 0.784314)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.133333, 0.133333, 0.133333, 1)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sugp2"]
-bg_color = Color(0.521587, 0, 0.118149, 1)
+bg_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -31,7 +80,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb6dy"]
-bg_color = Color(0.324381, 1.99863e-05, 0.273097, 1)
+bg_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -48,23 +97,23 @@ corner_radius_bottom_left = 8
 normal = Vector2(-0.929598, -0.368576)
 distance = -46.9335
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("enemigos_puntos")]
-script = ExtResource("1_sugp2")
+[node name="Nivel1" type="Node2D" node_paths=PackedStringArray("enemigos_puntos")]
+script = ExtResource("1_nkjvb")
 enemigos_puntos = [NodePath("EnemigosPosiciones/Marker2D1"), NodePath("EnemigosPosiciones/Marker2D2"), NodePath("EnemigosPosiciones/Marker2D3"), NodePath("EnemigosPosiciones/Marker2D4"), NodePath("EnemigosPosiciones/Marker2D5"), NodePath("EnemigosPosiciones/Marker2D6")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_tbgi4")
+texture = ExtResource("2_kkeat")
 centered = false
 
 [node name="Hud" type="CanvasLayer" parent="."]
-script = ExtResource("3_85g3d")
+script = ExtResource("3_5u7j1")
 
 [node name="LateralPanel" type="Panel" parent="Hud"]
-custom_minimum_size = Vector2(214, 0)
+custom_minimum_size = Vector2(96, 0)
 anchors_preset = -1
-anchor_right = 0.157
+anchor_right = 0.08800001
 anchor_bottom = 1.0
-offset_right = -0.462006
+offset_right = -0.20800018
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tipki")
 
@@ -82,36 +131,94 @@ theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Hud/LateralPanel/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 0
 
-[node name="guardian_selected_1" type="HBoxContainer" parent="Hud/LateralPanel/MarginContainer/VBoxContainer"]
+[node name="guardian_selected_1" type="PanelContainer" parent="Hud/LateralPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-script = ExtResource("3_o6xl0")
-guardian_scene = ExtResource("4_tipki")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ma4t3")
+script = ExtResource("4_80s5i")
+guardian_scene = ExtResource("5_xjhar")
 
 [node name="TextureRect" type="TextureRect" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_1"]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture = ExtResource("4_85g3d")
+texture = ExtResource("6_ofuir")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_1"]
 layout_mode = 2
-text = "Ndaaye"
+size_flags_vertical = 8
+text = "120"
+label_settings = SubResource("LabelSettings_5u7j1")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="guardian_selected_2" type="HBoxContainer" parent="Hud/LateralPanel/MarginContainer/VBoxContainer"]
+[node name="guardian_selected_2" type="PanelContainer" parent="Hud/LateralPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-script = ExtResource("3_o6xl0")
+theme_override_styles/panel = SubResource("StyleBoxFlat_nkjvb")
+script = ExtResource("4_80s5i")
+guardian_scene = ExtResource("5_xjhar")
 
 [node name="TextureRect" type="TextureRect" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_2"]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture = ExtResource("3_jyhfs")
+texture = ExtResource("7_5u7j1")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_2"]
 layout_mode = 2
-text = "Guarnian 2"
+size_flags_vertical = 8
+text = "120"
+label_settings = SubResource("LabelSettings_5u7j1")
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 1
+
+[node name="guardian_selected_3" type="PanelContainer" parent="Hud/LateralPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ofuir")
+script = ExtResource("4_80s5i")
+guardian_scene = ExtResource("5_xjhar")
+
+[node name="TextureRect" type="TextureRect" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_3"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("8_80s5i")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_3"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "120"
+label_settings = SubResource("LabelSettings_5u7j1")
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 1
+
+[node name="guardian_selected_4" type="PanelContainer" parent="Hud/LateralPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kkeat")
+script = ExtResource("4_80s5i")
+guardian_scene = ExtResource("5_xjhar")
+
+[node name="TextureRect" type="TextureRect" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_4"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("9_xjhar")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_4"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "120"
+label_settings = SubResource("LabelSettings_5u7j1")
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Hud"]
 custom_minimum_size = Vector2(0, 24)
@@ -123,7 +230,7 @@ offset_bottom = 39.0
 [node name="SaludTexture" type="TextureRect" parent="Hud/HBoxContainer"]
 clip_contents = true
 layout_mode = 2
-texture = ExtResource("8_choun")
+texture = ExtResource("8_4ewe0")
 expand_mode = 3
 
 [node name="VidasProgressBar" type="ProgressBar" parent="Hud/HBoxContainer"]
@@ -138,7 +245,7 @@ show_percentage = false
 [node name="ManaTexture" type="TextureRect" parent="Hud/HBoxContainer"]
 clip_contents = true
 layout_mode = 2
-texture = ExtResource("9_ya4ey")
+texture = ExtResource("9_xjwxr")
 expand_mode = 3
 
 [node name="ManaLabel" type="Label" parent="Hud/HBoxContainer"]
@@ -148,7 +255,7 @@ text = "0"
 [node name="EnergiaTexture" type="TextureRect" parent="Hud/HBoxContainer"]
 clip_contents = true
 layout_mode = 2
-texture = ExtResource("10_eb6dy")
+texture = ExtResource("10_nmr0y")
 expand_mode = 3
 
 [node name="EnergiaLabel" type="Label" parent="Hud/HBoxContainer"]
@@ -180,9 +287,10 @@ offset_right = 1011.0
 offset_bottom = 434.0
 theme_override_colors/font_color = Color(1, 0, 0.0980392, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 8
 theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 36
 text = "¡¡ PERDISTE !!
@@ -226,7 +334,7 @@ metadata/_edit_lock_ = true
 [node name="Grilla" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("5_tefeu")
+script = ExtResource("11_bonye")
 
 [node name="Fila_0_Col_0" type="Panel" parent="Grilla"]
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
@@ -236,7 +344,7 @@ offset_left = 304.0
 offset_top = 226.0
 offset_right = 394.0
 offset_bottom = 276.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 
 [node name="Fila_0_Col_1" type="Panel" parent="Grilla"]
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
@@ -246,7 +354,7 @@ offset_left = 408.0
 offset_top = 226.0
 offset_right = 498.0
 offset_bottom = 276.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 col = 1
 
 [node name="Fila_0_Col_2" type="Panel" parent="Grilla"]
@@ -257,7 +365,7 @@ offset_left = 520.0
 offset_top = 226.0
 offset_right = 610.0
 offset_bottom = 276.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 col = 2
 
 [node name="Fila_0_Col_3" type="Panel" parent="Grilla"]
@@ -268,7 +376,7 @@ offset_left = 626.0
 offset_top = 226.0
 offset_right = 716.0
 offset_bottom = 276.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 col = 3
 
 [node name="Fila_0_Col_4" type="Panel" parent="Grilla"]
@@ -279,7 +387,7 @@ offset_left = 728.0
 offset_top = 226.0
 offset_right = 818.0
 offset_bottom = 276.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 col = 4
 
 [node name="Fila_0_Col_5" type="Panel" parent="Grilla"]
@@ -290,7 +398,7 @@ offset_left = 832.0
 offset_top = 226.0
 offset_right = 922.0
 offset_bottom = 276.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 col = 5
 
 [node name="Fila_0_Col_6" type="Panel" parent="Grilla"]
@@ -301,7 +409,7 @@ offset_left = 936.0
 offset_top = 226.0
 offset_right = 1026.0
 offset_bottom = 276.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 col = 6
 
 [node name="Fila_1_Col_0" type="Panel" parent="Grilla"]
@@ -312,7 +420,7 @@ offset_left = 280.0
 offset_top = 282.0
 offset_right = 370.0
 offset_bottom = 332.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 1
 
 [node name="Fila_1_Col_1" type="Panel" parent="Grilla"]
@@ -323,7 +431,7 @@ offset_left = 392.0
 offset_top = 282.0
 offset_right = 492.0
 offset_bottom = 332.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 1
 col = 1
 
@@ -335,7 +443,7 @@ offset_left = 512.0
 offset_top = 282.0
 offset_right = 602.0
 offset_bottom = 332.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 1
 col = 2
 
@@ -347,7 +455,7 @@ offset_left = 620.0
 offset_top = 282.0
 offset_right = 710.0
 offset_bottom = 332.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 1
 col = 3
 
@@ -359,7 +467,7 @@ offset_left = 736.0
 offset_top = 282.0
 offset_right = 826.0
 offset_bottom = 332.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 1
 col = 4
 
@@ -371,7 +479,7 @@ offset_left = 843.0
 offset_top = 282.0
 offset_right = 933.0
 offset_bottom = 332.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 1
 col = 5
 
@@ -383,7 +491,7 @@ offset_left = 960.0
 offset_top = 282.0
 offset_right = 1050.0
 offset_bottom = 332.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 1
 col = 6
 
@@ -395,7 +503,7 @@ offset_left = 248.0
 offset_top = 344.0
 offset_right = 348.0
 offset_bottom = 394.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 2
 
 [node name="Fila_2_Col_1" type="Panel" parent="Grilla"]
@@ -406,7 +514,7 @@ offset_left = 368.0
 offset_top = 344.0
 offset_right = 478.0
 offset_bottom = 394.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 2
 col = 1
 
@@ -418,7 +526,7 @@ offset_left = 496.0
 offset_top = 344.0
 offset_right = 596.0
 offset_bottom = 394.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 2
 col = 2
 
@@ -430,7 +538,7 @@ offset_left = 616.0
 offset_top = 344.0
 offset_right = 716.0
 offset_bottom = 394.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 2
 col = 3
 
@@ -442,7 +550,7 @@ offset_left = 736.0
 offset_top = 344.0
 offset_right = 836.0
 offset_bottom = 394.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 2
 col = 4
 
@@ -454,7 +562,7 @@ offset_left = 856.0
 offset_top = 344.0
 offset_right = 956.0
 offset_bottom = 394.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 2
 col = 5
 
@@ -466,7 +574,7 @@ offset_left = 976.0
 offset_top = 344.0
 offset_right = 1076.0
 offset_bottom = 394.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 2
 col = 6
 
@@ -478,7 +586,7 @@ offset_left = 216.0
 offset_top = 408.0
 offset_right = 326.0
 offset_bottom = 468.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 3
 
 [node name="Fila_3_Col_1" type="Panel" parent="Grilla"]
@@ -489,7 +597,7 @@ offset_left = 336.0
 offset_top = 408.0
 offset_right = 466.0
 offset_bottom = 468.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 3
 col = 1
 
@@ -501,7 +609,7 @@ offset_left = 480.0
 offset_top = 408.0
 offset_right = 590.0
 offset_bottom = 468.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 3
 col = 2
 
@@ -513,7 +621,7 @@ offset_left = 608.0
 offset_top = 408.0
 offset_right = 718.0
 offset_bottom = 468.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 3
 col = 3
 
@@ -525,7 +633,7 @@ offset_left = 739.0
 offset_top = 408.0
 offset_right = 849.0
 offset_bottom = 468.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 3
 col = 4
 
@@ -537,7 +645,7 @@ offset_left = 865.0
 offset_top = 408.0
 offset_right = 985.0
 offset_bottom = 468.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 3
 col = 5
 
@@ -549,7 +657,7 @@ offset_left = 999.0
 offset_top = 408.0
 offset_right = 1109.0
 offset_bottom = 468.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 3
 col = 6
 
@@ -561,7 +669,7 @@ offset_left = 176.0
 offset_top = 480.0
 offset_right = 296.0
 offset_bottom = 550.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 4
 
 [node name="Fila_4_Col_1" type="Panel" parent="Grilla"]
@@ -572,7 +680,7 @@ offset_left = 315.0
 offset_top = 480.0
 offset_right = 435.0
 offset_bottom = 550.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 4
 col = 1
 
@@ -584,7 +692,7 @@ offset_left = 456.0
 offset_top = 480.0
 offset_right = 576.0
 offset_bottom = 550.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 4
 col = 2
 
@@ -596,7 +704,7 @@ offset_left = 600.0
 offset_top = 480.0
 offset_right = 720.0
 offset_bottom = 550.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 4
 col = 3
 
@@ -608,7 +716,7 @@ offset_left = 744.0
 offset_top = 480.0
 offset_right = 864.0
 offset_bottom = 550.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 4
 col = 4
 
@@ -620,7 +728,7 @@ offset_left = 880.0
 offset_top = 480.0
 offset_right = 1000.0
 offset_bottom = 550.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 4
 col = 5
 
@@ -632,7 +740,7 @@ offset_left = 1016.0
 offset_top = 480.0
 offset_right = 1136.0
 offset_bottom = 550.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 4
 col = 6
 
@@ -644,7 +752,7 @@ offset_left = 128.0
 offset_top = 568.0
 offset_right = 258.0
 offset_bottom = 658.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 5
 
 [node name="Fila_5_Col_1" type="Panel" parent="Grilla"]
@@ -655,7 +763,7 @@ offset_left = 286.0
 offset_top = 568.0
 offset_right = 416.0
 offset_bottom = 658.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 5
 col = 1
 
@@ -667,7 +775,7 @@ offset_left = 432.0
 offset_top = 568.0
 offset_right = 572.0
 offset_bottom = 658.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 5
 col = 2
 
@@ -679,7 +787,7 @@ offset_left = 592.0
 offset_top = 568.0
 offset_right = 732.0
 offset_bottom = 658.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 5
 col = 3
 
@@ -691,7 +799,7 @@ offset_left = 744.0
 offset_top = 568.0
 offset_right = 874.0
 offset_bottom = 658.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 5
 col = 4
 
@@ -703,7 +811,7 @@ offset_left = 896.0
 offset_top = 568.0
 offset_right = 1026.0
 offset_bottom = 658.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 5
 col = 5
 
@@ -715,6 +823,6 @@ offset_left = 1040.0
 offset_top = 568.0
 offset_right = 1170.0
 offset_bottom = 658.0
-script = ExtResource("5_tbgi4")
+script = ExtResource("12_fs308")
 row = 5
 col = 5
