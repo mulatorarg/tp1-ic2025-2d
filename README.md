@@ -7,9 +7,13 @@ Adaptación de mitologías del litoral Argentino, al tipo *Plants vs Zombies* de
 # Resumen del juego
 
 **Título provisional:** Campo del Cielo: Rubí vs. Los Siete.
+
 **Género:** Defensa de torre en 2D, grid-based, estilo casual táctico.
+
 **Resolución objetivo:** **HD 1366×768** (UI y HUD diseñados para esta resolución).
+
 **Grid de juego:** **7 columnas × 5 filas** (fijo).
+
 **Estética:** ilustración estilizada, mezcla de folclore guaraní y diseño moderno. Tono: mágico, juvenil, épico.
 
 # Concepto jugable (core loop)
