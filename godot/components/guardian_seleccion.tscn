@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://dblah6y2o6bdt"]
+
+[ext_resource type="Script" uid="uid://305wva1hlm2d" path="res://components/guardian_seleccion.gd" id="1_48pyv"]
+[ext_resource type="Texture2D" uid="uid://cgftstbd2i5bf" path="res://assets/guardianes/ndaaye.png" id="3_eta3e"]
+[ext_resource type="FontFile" uid="uid://bjbgb2tkw7d04" path="res://assets/fonts/River Adventurer.ttf" id="4_r8nnp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ma4t3"]
+bg_color = Color(0.8646751, 0.86467516, 0.8646751, 0.23529412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_5u7j1"]
+font = ExtResource("4_r8nnp")
+font_size = 20
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.431373)
+shadow_offset = Vector2(2, 2)
+
+[node name="GuardianSeleccion" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_ma4t3")
+script = ExtResource("1_48pyv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("3_eta3e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+text = "120"
+label_settings = SubResource("LabelSettings_5u7j1")
+horizontal_alignment = 1
+vertical_alignment = 1

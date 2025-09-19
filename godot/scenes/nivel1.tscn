@@ -1,16 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://dt5ippn7egc2f"]
+[gd_scene load_steps=18 format=3 uid="uid://dt5ippn7egc2f"]
 
 [ext_resource type="Script" uid="uid://bq276sho2g2n6" path="res://scenes/nivel1.gd" id="1_nkjvb"]
 [ext_resource type="Texture2D" uid="uid://drwkwdw0um6yr" path="res://assets/nivel1.png" id="2_kkeat"]
 [ext_resource type="Script" uid="uid://07pcpobppytl" path="res://scenes/hud.gd" id="3_5u7j1"]
-[ext_resource type="Script" uid="uid://305wva1hlm2d" path="res://scenes/guardian_selected.gd" id="4_80s5i"]
-[ext_resource type="PackedScene" uid="uid://wlv8jp40sblc" path="res://components/guardianes/ndaaye.tscn" id="5_xjhar"]
-[ext_resource type="Texture2D" uid="uid://cgftstbd2i5bf" path="res://assets/guardianes/ndaaye.png" id="6_ofuir"]
-[ext_resource type="Texture2D" uid="uid://b5slffmylr58d" path="res://assets/guardianes/amaru.png" id="7_5u7j1"]
-[ext_resource type="FontFile" uid="uid://bjbgb2tkw7d04" path="res://assets/fonts/River Adventurer.ttf" id="7_80s5i"]
+[ext_resource type="PackedScene" uid="uid://dblah6y2o6bdt" path="res://components/guardian_seleccion.tscn" id="4_xjhar"]
+[ext_resource type="PackedScene" uid="uid://wlv8jp40sblc" path="res://components/guardianes/ndaaye.tscn" id="5_2mk4e"]
 [ext_resource type="Texture2D" uid="uid://dj1ox2twjqnyw" path="res://assets/ui/salud.png" id="8_4ewe0"]
-[ext_resource type="Texture2D" uid="uid://exdy2tsmglsr" path="res://assets/guardianes/Yvera.png" id="8_80s5i"]
-[ext_resource type="Texture2D" uid="uid://cwbx3jqwxcby8" path="res://assets/guardianes/Kala.png" id="9_xjhar"]
 [ext_resource type="Texture2D" uid="uid://cuw1qh4yx56r7" path="res://assets/ui/mana.png" id="9_xjwxr"]
 [ext_resource type="Texture2D" uid="uid://c11hcwbtyts6e" path="res://assets/ui/energia.png" id="10_nmr0y"]
 [ext_resource type="Script" uid="uid://b0ewrhlsy1cj5" path="res://scenes/grilla.gd" id="11_bonye"]
@@ -18,52 +13,6 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tipki"]
 bg_color = Color(0, 0, 0, 0.0392157)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ma4t3"]
-bg_color = Color(0.870588, 0.870588, 0.870588, 0.784314)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.133333, 0.133333, 0.133333, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_detail = 10
-
-[sub_resource type="LabelSettings" id="LabelSettings_5u7j1"]
-font = ExtResource("7_80s5i")
-font_size = 20
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 6
-shadow_color = Color(0, 0, 0, 0.431373)
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkjvb"]
-bg_color = Color(0.870588, 0.870588, 0.870588, 0.784314)
-border_width_left = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.133333, 0.133333, 0.133333, 1)
-corner_detail = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ofuir"]
-bg_color = Color(0.870588, 0.870588, 0.870588, 0.784314)
-border_width_left = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.133333, 0.133333, 0.133333, 1)
-corner_detail = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkeat"]
-bg_color = Color(0.870588, 0.870588, 0.870588, 0.784314)
-border_width_left = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.133333, 0.133333, 0.133333, 1)
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sugp2"]
 bg_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
@@ -96,6 +45,9 @@ corner_radius_bottom_left = 8
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_27y2h"]
 normal = Vector2(-0.929598, -0.368576)
 distance = -46.9335
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2mk4e"]
+size = Vector2(20, 768)
 
 [node name="Nivel1" type="Node2D" node_paths=PackedStringArray("enemigos_puntos")]
 script = ExtResource("1_nkjvb")
@@ -133,92 +85,9 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="guardian_selected_1" type="PanelContainer" parent="Hud/LateralPanel/MarginContainer/VBoxContainer"]
+[node name="guardian_seleccion_1" parent="Hud/LateralPanel/MarginContainer/VBoxContainer" instance=ExtResource("4_xjhar")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ma4t3")
-script = ExtResource("4_80s5i")
-guardian_scene = ExtResource("5_xjhar")
-
-[node name="TextureRect" type="TextureRect" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_1"]
-custom_minimum_size = Vector2(96, 96)
-layout_mode = 2
-texture = ExtResource("6_ofuir")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_1"]
-layout_mode = 2
-size_flags_vertical = 8
-text = "120"
-label_settings = SubResource("LabelSettings_5u7j1")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="guardian_selected_2" type="PanelContainer" parent="Hud/LateralPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nkjvb")
-script = ExtResource("4_80s5i")
-guardian_scene = ExtResource("5_xjhar")
-
-[node name="TextureRect" type="TextureRect" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_2"]
-custom_minimum_size = Vector2(96, 96)
-layout_mode = 2
-texture = ExtResource("7_5u7j1")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_2"]
-layout_mode = 2
-size_flags_vertical = 8
-text = "120"
-label_settings = SubResource("LabelSettings_5u7j1")
-horizontal_alignment = 1
-vertical_alignment = 1
-max_lines_visible = 1
-
-[node name="guardian_selected_3" type="PanelContainer" parent="Hud/LateralPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ofuir")
-script = ExtResource("4_80s5i")
-guardian_scene = ExtResource("5_xjhar")
-
-[node name="TextureRect" type="TextureRect" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_3"]
-custom_minimum_size = Vector2(96, 96)
-layout_mode = 2
-texture = ExtResource("8_80s5i")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_3"]
-layout_mode = 2
-size_flags_vertical = 8
-text = "120"
-label_settings = SubResource("LabelSettings_5u7j1")
-horizontal_alignment = 1
-vertical_alignment = 1
-max_lines_visible = 1
-
-[node name="guardian_selected_4" type="PanelContainer" parent="Hud/LateralPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_kkeat")
-script = ExtResource("4_80s5i")
-guardian_scene = ExtResource("5_xjhar")
-
-[node name="TextureRect" type="TextureRect" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_4"]
-custom_minimum_size = Vector2(96, 96)
-layout_mode = 2
-texture = ExtResource("9_xjhar")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="Hud/LateralPanel/MarginContainer/VBoxContainer/guardian_selected_4"]
-layout_mode = 2
-size_flags_vertical = 8
-text = "120"
-label_settings = SubResource("LabelSettings_5u7j1")
-horizontal_alignment = 1
-vertical_alignment = 1
-max_lines_visible = 1
+guardian_scene = ExtResource("5_2mk4e")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Hud"]
 custom_minimum_size = Vector2(0, 24)
@@ -826,3 +695,11 @@ offset_bottom = 658.0
 script = ExtResource("12_fs308")
 row = 5
 col = 5
+
+[node name="FueraPantallaArea" type="Area2D" parent="." groups=["pantalla"]]
+collision_layer = 128
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FueraPantallaArea"]
+position = Vector2(1400, 384)
+shape = SubResource("RectangleShape2D_2mk4e")
