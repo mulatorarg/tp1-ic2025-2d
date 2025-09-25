@@ -1,4 +1,4 @@
-# TP 1: Juego 2D
+# Trabajo Práctico N° 1: Juego 2D
 
 **Desarrollador**: Gabriel Campo (Yacaré Studio)
 

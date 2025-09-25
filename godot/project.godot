@@ -10,7 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Proyecto TP Juego 2d"
+config/name="Campo del Cielo: Rubí vs. Los Siete"
+config/description="Adaptación de mitologías del litoral Argentino, al tipo *Plants vs Zombies* desarrollado en Godot Engine 4.5.
+s
+Desarrollado durante el cursado de VJ-GDT-01-25 - Desarrollo de Videojuegos con Godot."
 config/version="0.0.1"
 run/main_scene="uid://dt5ippn7egc2f"
 config/features=PackedStringArray("4.5", "GL Compatibility")
