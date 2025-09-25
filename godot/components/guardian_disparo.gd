@@ -12,7 +12,7 @@ func _process(delta):
 	rotation += velocidad_rotacion * delta
 
 func _on_area_entered(area: Area2D) -> void:
-	print(area.get_groups())
+	#print(area.get_groups())
 	if area.is_in_group("pantalla"):
 		#print("Disparo choca con pantalla")
 		queue_free()

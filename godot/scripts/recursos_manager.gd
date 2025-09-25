@@ -1,10 +1,14 @@
 extends Node
-## Clase Singleton que gestiona datos de la partida
+## Clase Singleton que gestiona datos de los recursos del Player.
 
 signal recursos_changed ## Ocurre cuando se modifica valor de algún recurso, como la energía o el maná.
 
 var mana := 50 ## Nivel de maná para .
-var energia := 50 ## Nivel de energía para .
+var energia := 150: ## Nivel de energía para .
+	set(value):
+		energia = value
+		recursos_changed.emit()
+
 var salud := 100 ## Valor de vida del usuario.
 var nivel := 1 ## Nivel del usuario.
 

@@ -12,10 +12,18 @@ class_name Nivel1
 @onready var perder_area: Area2D = $PerderArea
 @onready var perdiste_label: Label = $Hud/PerdisteLabel
 
+@export var oleadas : Dictionary = {}
+
 var enemigos_cantidad_instanciadas := 0
 var vidas_restantes := 0
 
 func _ready():
+	
+	oleadas = {
+		0: [AoAoScene, AoAoScene, AoAoScene, AoAoScene], # oleada 1
+		1: [AoAoScene, AoAoScene, AoAoScene, AoAoScene, AoAoScene, AoAoScene], # oleada 2
+	}
+
 	perdiste_label.visible = false
 	perder_area.area_entered.connect(_on_perder_area_body_entered)
 	enemigos_progress_bar.max_value = enemigos_maximos

@@ -7,9 +7,9 @@ class_name HUD
 @onready var vidas_progress_bar: ProgressBar = $HBoxContainer/VidasProgressBar
 
 func _ready() -> void:
-	GameManager.recursos_changed.connect(actualizar_ui)
+	RecursosManager.recursos_changed.connect(actualizar_ui)
 	actualizar_ui()
 	
 func actualizar_ui()->void:
-	energia_label.text = str(GameManager.energia)
-	mana_label.text = str(GameManager.mana)
+	energia_label.text = str(RecursosManager.energia)
+	mana_label.text = str(RecursosManager.mana)

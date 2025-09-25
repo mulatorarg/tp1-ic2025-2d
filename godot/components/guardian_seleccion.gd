@@ -1,35 +1,54 @@
 extends PanelContainer
 
-## Emm.
+## Item para la selección de Guardianes a agregar a la grilla.
 class_name GuardianSeleccion
 
-@export var guardian_scene: PackedScene
-
 @onready var icon: TextureRect = $TextureRect
-@onready var label: Label = $Label
+@onready var label: Label = %Label
+
+@export var reproductor: AudioStreamPlayer2D
+
+var audio_sin_recursos = preload("res://assets/audios/sin_recursos_suficientes.ogg")
+
+## La escena a instanciar en la grilla. Debe ser un Guardían.
+@export var guardian_scene: PackedScene
+## Costo de Energía necesario para insertar en la grilla.
+@export var costo_energia : int = 50: 
+	set(value):
+		costo_energia = value
+		%Label.text = str(costo_energia)
+		_on_recursos_changed_emit()
 
 func _ready() -> void:
-	#if guardian_scene:
-	#	label.text str(guardian_scene.name)
-	draw.connect(prueba)
-	pass
-
-func prueba() -> void:
-	print("lisa")
+	RecursosManager.recursos_changed.connect(_on_recursos_changed_emit)
+	if guardian_scene:
+		label.text = str(costo_energia)
+	_on_recursos_changed_emit()
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
+	
 	if guardian_scene == null:
 		print_rich("[color=red]No se seleccionó Guardian.[/color]")
 		return null
 
-	var guardian = guardian_scene.instantiate()
-	if guardian.has_method("recursos_disponibles") and !guardian.recursos_disponibles():
-		print_rich("[color=red]Recursos insuficientes para agregar ese Guardian.[/color]")
+	if RecursosManager.energia >= costo_energia:
+		var preview := TextureRect.new()
+		preview.texture = icon.texture
+		preview.custom_minimum_size = Vector2(128, 180)
+		preview.scale = Vector2(0.5, 0.5)
+		set_drag_preview(preview)
+
+		return {"escena": guardian_scene, "costo": costo_energia}
+
+	else:
+		print_rich("[color=red]Sin recursos para jugar Guardian.[/color]")
+		if reproductor and audio_sin_recursos:
+			reproductor.stream = audio_sin_recursos
+			reproductor.play()
 		return null
 
-	var preview := TextureRect.new()
-	preview.texture = icon.texture
-	preview.custom_minimum_size = Vector2(128, 180)
-	preview.scale = Vector2(0.5, 0.5)
-	set_drag_preview(preview)
-	return guardian_scene
+func _on_recursos_changed_emit() -> void:
+	if RecursosManager.energia >= costo_energia:
+		modulate = Color(1,1,1,1)
+	else:
+		modulate = Color(0.6,0.6,0.6,.96)

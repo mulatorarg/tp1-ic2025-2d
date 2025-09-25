@@ -2,6 +2,7 @@ extends Area2D
 
 @export var velocidad : int = 50 ## Velocidad en que se mueve.
 @export var salud : int = 50 ## Cantidad de Vida inicial.
+@export var premio_energia : int = 50 ## Premio de Energía que da al matarlo.
 @export var nombre : String = "Enemigo" ## Nombre del Enemigo.
 @export var textura: Texture2D = preload("res://assets/enemigos/aoao.png") ## Textura del enemigo
 
@@ -32,6 +33,7 @@ func le_hacen_daño(cantidad):
 	salud_actual -= cantidad
 	progress_bar.value = clamp(salud_actual, 0, salud)
 	if salud_actual <= 0:
+		RecursosManager.energia += premio_energia
 		animation_player.play("morir")
 		collision_shape_2d.visible = false
 		label.visible = false

@@ -1,0 +1,26 @@
+func _drop_data(_pos, data):
+	var pos_global = get_global_mouse_position()
+	
+	var x_points_positions = []
+	for i in horizontal_path_2d.curve.point_count:
+		var x_point_posicion = horizontal_path_2d.curve.get_point_position(i)
+		var x_point_posicion_global = horizontal_path_2d.to_global(x_point_posicion)
+		x_points_positions.push_back(x_point_posicion_global)
+	for i in x_points_positions.size()-1:
+		if x_points_positions[i].x < pos_global.x and x_points_positions[i+1].x > pos_global.x:
+			col = i
+
+	var y_points_positions = []
+	for i in vertical_path_2d.curve.point_count:
+		var y_point_posicion = vertical_path_2d.curve.get_point_position(i)
+		var y_point_posicion_global = vertical_path_2d.to_global(y_point_posicion)
+		y_points_positions.push_back(y_point_posicion_global)
+	for i in y_points_positions.size()-1:
+		if y_points_positions[i].y < pos_global.y and y_points_positions[i+1].y > pos_global.y:
+			row = i
+
+	print("Col: %s, Row: %s" % [col, row])
+	
+	if col > -1 and row > -1:
+		if grid.is_celda_disponible(row, col):
+			grid.insertar_guardian(data.escena, row, col)

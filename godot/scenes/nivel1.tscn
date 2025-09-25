@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dt5ippn7egc2f"]
+[gd_scene load_steps=20 format=3 uid="uid://dt5ippn7egc2f"]
 
 [ext_resource type="Script" uid="uid://bq276sho2g2n6" path="res://scenes/nivel1.gd" id="1_nkjvb"]
 [ext_resource type="Texture2D" uid="uid://drwkwdw0um6yr" path="res://assets/nivel1.png" id="2_kkeat"]
@@ -49,9 +49,23 @@ distance = -46.9335
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2mk4e"]
 size = Vector2(20, 768)
 
+[sub_resource type="Curve2D" id="Curve2D_2mk4e"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 309, 255, 0, 0, 0, 0, 408, 261, 0, 0, 0, 0, 516, 263, 0, 0, 0, 0, 623, 261, 0, 0, 0, 0, 725, 267, 0, 0, 0, 0, 826, 261, 0, 0, 0, 0, 930, 264, 0, 0, 0, 0, 1029, 265)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_ma4t3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 369, 233, 0, 0, 0, 0, 372, 282, 0, 0, 0, 0, 367, 341, 0, 0, 0, 0, 360, 403, 0, 0, 0, 0, 359, 474, 0, 0, 0, 0, 352, 560, 0, 0, 0, 0, 355, 667)
+}
+point_count = 7
+
 [node name="Nivel1" type="Node2D" node_paths=PackedStringArray("enemigos_puntos")]
 script = ExtResource("1_nkjvb")
 enemigos_puntos = [NodePath("EnemigosPosiciones/Marker2D1"), NodePath("EnemigosPosiciones/Marker2D2"), NodePath("EnemigosPosiciones/Marker2D3"), NodePath("EnemigosPosiciones/Marker2D4"), NodePath("EnemigosPosiciones/Marker2D5"), NodePath("EnemigosPosiciones/Marker2D6")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_kkeat")
@@ -85,9 +99,16 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="guardian_seleccion_1" parent="Hud/LateralPanel/MarginContainer/VBoxContainer" instance=ExtResource("4_xjhar")]
+[node name="guardian_seleccion_1" parent="Hud/LateralPanel/MarginContainer/VBoxContainer" node_paths=PackedStringArray("reproductor") instance=ExtResource("4_xjhar")]
 layout_mode = 2
+reproductor = NodePath("../../../../../AudioStreamPlayer2D")
 guardian_scene = ExtResource("5_2mk4e")
+
+[node name="guardian_seleccion_2" parent="Hud/LateralPanel/MarginContainer/VBoxContainer" node_paths=PackedStringArray("reproductor") instance=ExtResource("4_xjhar")]
+layout_mode = 2
+reproductor = NodePath("../../../../../AudioStreamPlayer2D")
+guardian_scene = ExtResource("5_2mk4e")
+costo_energia = 250
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Hud"]
 custom_minimum_size = Vector2(0, 24)
@@ -214,6 +235,8 @@ offset_top = 226.0
 offset_right = 394.0
 offset_bottom = 276.0
 script = ExtResource("12_fs308")
+row = 0
+col = 0
 
 [node name="Fila_0_Col_1" type="Panel" parent="Grilla"]
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
@@ -224,6 +247,7 @@ offset_top = 226.0
 offset_right = 498.0
 offset_bottom = 276.0
 script = ExtResource("12_fs308")
+row = 0
 col = 1
 
 [node name="Fila_0_Col_2" type="Panel" parent="Grilla"]
@@ -235,6 +259,7 @@ offset_top = 226.0
 offset_right = 610.0
 offset_bottom = 276.0
 script = ExtResource("12_fs308")
+row = 0
 col = 2
 
 [node name="Fila_0_Col_3" type="Panel" parent="Grilla"]
@@ -246,6 +271,7 @@ offset_top = 226.0
 offset_right = 716.0
 offset_bottom = 276.0
 script = ExtResource("12_fs308")
+row = 0
 col = 3
 
 [node name="Fila_0_Col_4" type="Panel" parent="Grilla"]
@@ -257,6 +283,7 @@ offset_top = 226.0
 offset_right = 818.0
 offset_bottom = 276.0
 script = ExtResource("12_fs308")
+row = 0
 col = 4
 
 [node name="Fila_0_Col_5" type="Panel" parent="Grilla"]
@@ -268,6 +295,7 @@ offset_top = 226.0
 offset_right = 922.0
 offset_bottom = 276.0
 script = ExtResource("12_fs308")
+row = 0
 col = 5
 
 [node name="Fila_0_Col_6" type="Panel" parent="Grilla"]
@@ -279,6 +307,7 @@ offset_top = 226.0
 offset_right = 1026.0
 offset_bottom = 276.0
 script = ExtResource("12_fs308")
+row = 0
 col = 6
 
 [node name="Fila_1_Col_0" type="Panel" parent="Grilla"]
@@ -291,6 +320,7 @@ offset_right = 370.0
 offset_bottom = 332.0
 script = ExtResource("12_fs308")
 row = 1
+col = 0
 
 [node name="Fila_1_Col_1" type="Panel" parent="Grilla"]
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
@@ -374,6 +404,7 @@ offset_right = 348.0
 offset_bottom = 394.0
 script = ExtResource("12_fs308")
 row = 2
+col = 0
 
 [node name="Fila_2_Col_1" type="Panel" parent="Grilla"]
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
@@ -457,6 +488,7 @@ offset_right = 326.0
 offset_bottom = 468.0
 script = ExtResource("12_fs308")
 row = 3
+col = 0
 
 [node name="Fila_3_Col_1" type="Panel" parent="Grilla"]
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
@@ -540,6 +572,7 @@ offset_right = 296.0
 offset_bottom = 550.0
 script = ExtResource("12_fs308")
 row = 4
+col = 0
 
 [node name="Fila_4_Col_1" type="Panel" parent="Grilla"]
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
@@ -623,6 +656,7 @@ offset_right = 258.0
 offset_bottom = 658.0
 script = ExtResource("12_fs308")
 row = 5
+col = 0
 
 [node name="Fila_5_Col_1" type="Panel" parent="Grilla"]
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
@@ -694,7 +728,7 @@ offset_right = 1170.0
 offset_bottom = 658.0
 script = ExtResource("12_fs308")
 row = 5
-col = 5
+col = 6
 
 [node name="FueraPantallaArea" type="Area2D" parent="." groups=["pantalla"]]
 collision_layer = 128
@@ -703,3 +737,9 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FueraPantallaArea"]
 position = Vector2(1400, 384)
 shape = SubResource("RectangleShape2D_2mk4e")
+
+[node name="HorizontalPath2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_2mk4e")
+
+[node name="VerticalPath2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ma4t3")
