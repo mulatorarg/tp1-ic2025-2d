@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfj8ju1hrp65h"
-path="res://.godot/imported/ndaaye.png-4d7228aa9bc316739921b2c47aba25a7.ctex"
+uid="uid://c55oyv4d2aq2i"
+path="res://.godot/imported/ChatGPT Image 29 sept 2025, 10_08_41 p.m..png-8d69bcb59a02761fff79b2fad8dae4d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/guardianes/ndaaye.png"
-dest_files=["res://.godot/imported/ndaaye.png-4d7228aa9bc316739921b2c47aba25a7.ctex"]
+source_file="res://assets/enemigos/ChatGPT Image 29 sept 2025, 10_08_41 p.m..png"
+dest_files=["res://.godot/imported/ChatGPT Image 29 sept 2025, 10_08_41 p.m..png-8d69bcb59a02761fff79b2fad8dae4d4.ctex"]
 
 [params]
 

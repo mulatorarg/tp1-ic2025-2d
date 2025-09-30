@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfj8ju1hrp65h"
-path="res://.godot/imported/ndaaye.png-4d7228aa9bc316739921b2c47aba25a7.ctex"
+uid="uid://cm2x1v152wdsb"
+path="res://.godot/imported/Rubi1-idle.png-3fd46e82a54ac303be3b9181e36c5f4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/guardianes/ndaaye.png"
-dest_files=["res://.godot/imported/ndaaye.png-4d7228aa9bc316739921b2c47aba25a7.ctex"]
+source_file="res://assets/guardianes/Rubi1-idle.png"
+dest_files=["res://.godot/imported/Rubi1-idle.png-3fd46e82a54ac303be3b9181e36c5f4c.ctex"]
 
 [params]
 

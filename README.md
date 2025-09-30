@@ -1,6 +1,6 @@
 # Trabajo Práctico N° 1: Juego 2D
 
-**Desarrollador**: Gabriel Campo (Yacaré Studio)
+**Desarrollador**: Gabriel Campo.
 
 Adaptación de mitologías del litoral Argentino, al tipo *Plants vs Zombies* desarrollado en Godot Engine 4.5.
 
@@ -35,7 +35,7 @@ Diseño inspirado en flora y figuras culturales. Cada defensor tiene coste en Br
    * Rol: ralentizador, daño por restricción.
    * Coste: 75. HP 180. Efecto: ralentiza 50% por 3s y da 40 daño por segundo.
 
-3. **Flor de Meteoro (tire proyectiles)**
+3. **Flor de Meteoro (tira proyectiles)**
 
    * Rol: atacante a distancia.
    * Coste: 100. Cadencia media. DPS 30. Puede sobrecargarse con meteoritos para ataque crítico.
@@ -44,7 +44,7 @@ Diseño inspirado en flora y figuras culturales. Cada defensor tiene coste en Br
 
    * Rol: control. Coste 125. Lanza veneno que da daño con el tiempo y tiene chance de aturdir 1s.
 
-5. **Chacarera (generadora)**
+5. **Selene (generadora)**
 
    * Rol: producción de Brillos (similar a girasol).
    * Coste: 50. Genera 25 Brillos cada 8s. Mejora la moral de filas contiguas (pequeño buff).
@@ -92,7 +92,7 @@ Cada enemigo representa a los siete hijos; cada tipo tiene variantes (roaming, p
 
 Variante de boss: **Reunión de los Siete** (encuentro final de capítulo; sin invocar contenido sexual, solo batalla épica con fases).
 
-# 2. **Concept Art Guía (PNG a generar)**
+# 2. **Concept Art Guía**
 
 ### Elementos a incluir:
 

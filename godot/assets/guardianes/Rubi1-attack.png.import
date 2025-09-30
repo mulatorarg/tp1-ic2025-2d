@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfj8ju1hrp65h"
-path="res://.godot/imported/ndaaye.png-4d7228aa9bc316739921b2c47aba25a7.ctex"
+uid="uid://b4wqj2cydeq7n"
+path="res://.godot/imported/Rubi1-attack.png-d2fd059b339dff02a9162a57999698ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/guardianes/ndaaye.png"
-dest_files=["res://.godot/imported/ndaaye.png-4d7228aa9bc316739921b2c47aba25a7.ctex"]
+source_file="res://assets/guardianes/Rubi1-attack.png"
+dest_files=["res://.godot/imported/Rubi1-attack.png-d2fd059b339dff02a9162a57999698ac.ctex"]
 
 [params]
 

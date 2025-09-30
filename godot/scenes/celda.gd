@@ -7,9 +7,6 @@ class_name Celda
 
 @onready var grid: Grilla = $".." ## El padre debe ser una Grilla
 
-@onready var horizontal_path_2d: Path2D = $"../../HorizontalPath2D"
-@onready var vertical_path_2d: Path2D = $"../../VerticalPath2D"
-
 func _can_drop_data(_pos, data):
 	#print(_pos, data)
 	return data.costo <= RecursosManager.energia

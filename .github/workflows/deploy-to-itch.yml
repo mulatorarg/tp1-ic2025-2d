@@ -3,7 +3,7 @@ name: Godot Export and Upload to Itch
 on: [push, pull_request, workflow_dispatch]
 
 env:
-  GODOT_VERSION: "4.4.1"
+  GODOT_VERSION: "4.5"
   GODOT_STATUS: "stable"
 jobs:
   import-assets:

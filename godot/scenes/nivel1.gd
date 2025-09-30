@@ -10,7 +10,7 @@ class_name Nivel1
 @onready var enemigos_progress_bar: ProgressBar = $Hud/HBoxContainer/EnemigosProgressBar
 @onready var vidas_progress_bar: ProgressBar = $Hud/HBoxContainer/VidasProgressBar
 @onready var perder_area: Area2D = $PerderArea
-@onready var perdiste_label: Label = $Hud/PerdisteLabel
+@onready var perdiste_panel: Panel = $Hud/PerdistePanel
 
 @export var oleadas : Dictionary = {}
 
@@ -24,7 +24,7 @@ func _ready():
 		1: [AoAoScene, AoAoScene, AoAoScene, AoAoScene, AoAoScene, AoAoScene], # oleada 2
 	}
 
-	perdiste_label.visible = false
+	perdiste_panel.visible = false
 	perder_area.area_entered.connect(_on_perder_area_body_entered)
 	enemigos_progress_bar.max_value = enemigos_maximos
 	enemigos_progress_bar.value = 0
@@ -51,7 +51,7 @@ func _on_EnemyTimer_timeout():
 func _process(_delta: float) -> void:
 	if vidas_restantes <= 0:
 		print("PERDISTE")
-		perdiste_label.visible = true
+		perdiste_panel.visible = true
 		get_tree().paused = true
 
 func _on_perder_area_body_entered(body: Node2D) -> void:

@@ -5,6 +5,7 @@ class_name GuardianSeleccion
 
 @onready var icon: TextureRect = $TextureRect
 @onready var label: Label = %Label
+@onready var texture_rect: TextureRect = $TextureRect
 
 @export var reproductor: AudioStreamPlayer2D
 
@@ -12,6 +13,7 @@ var audio_sin_recursos = preload("res://assets/audios/sin_recursos_suficientes.o
 
 ## La escena a instanciar en la grilla. Debe ser un Guardían.
 @export var guardian_scene: PackedScene
+
 ## Costo de Energía necesario para insertar en la grilla.
 @export var costo_energia : int = 50: 
 	set(value):
@@ -19,8 +21,18 @@ var audio_sin_recursos = preload("res://assets/audios/sin_recursos_suficientes.o
 		%Label.text = str(costo_energia)
 		_on_recursos_changed_emit()
 
+## .
+@export var textura : Texture2D:
+	set(new_texture):
+		textura = new_texture
+		if new_texture:
+			if  texture_rect:
+				texture_rect.texture = new_texture
+
 func _ready() -> void:
 	RecursosManager.recursos_changed.connect(_on_recursos_changed_emit)
+	if textura:
+		texture_rect.texture = textura
 	if guardian_scene:
 		label.text = str(costo_energia)
 	_on_recursos_changed_emit()

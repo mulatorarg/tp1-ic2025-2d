@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dblah6y2o6bdt"]
+[gd_scene load_steps=5 format=3 uid="uid://dblah6y2o6bdt"]
 
 [ext_resource type="Script" uid="uid://305wva1hlm2d" path="res://components/guardian_seleccion.gd" id="1_48pyv"]
-[ext_resource type="Texture2D" uid="uid://cgftstbd2i5bf" path="res://assets/guardianes/ndaaye.png" id="3_eta3e"]
 [ext_resource type="FontFile" uid="uid://bjbgb2tkw7d04" path="res://assets/fonts/River Adventurer.ttf" id="4_r8nnp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ma4t3"]
@@ -33,7 +32,6 @@ script = ExtResource("1_48pyv")
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture = ExtResource("3_eta3e")
 expand_mode = 1
 stretch_mode = 5
 
