@@ -4,8 +4,11 @@ class_name Nivel1
 
 @export var enemigos_maximos := 8 ## Cantidad inicial de enemigos.
 @export var enemigos_puntos: Array[Marker2D] ## Puntos de partida de los enemigos.
+@export_range(1, 10)  var enemigos_oledas := 2 ## Cantidad de ordas de enemigos del nivel.
 
-@onready var AoAoScene = preload("res://components/enemies/aoao.tscn")
+@onready var AoAoScene   = preload("res://components/enemies/aoao.tscn")
+@onready var CositoScene = preload("res://components/enemies/cosito.tscn")
+
 @onready var enemigos_timer: Timer = $EnemigosTimer
 @onready var enemigos_progress_bar: ProgressBar = $Hud/HBoxContainer/EnemigosProgressBar
 @onready var vidas_progress_bar: ProgressBar = $Hud/HBoxContainer/VidasProgressBar
@@ -18,10 +21,10 @@ var enemigos_cantidad_instanciadas := 0
 var vidas_restantes := 0
 
 func _ready():
-	
+
 	oleadas = {
-		0: [AoAoScene, AoAoScene, AoAoScene, AoAoScene], # oleada 1
-		1: [AoAoScene, AoAoScene, AoAoScene, AoAoScene, AoAoScene, AoAoScene], # oleada 2
+		0: [AoAoScene, AoAoScene, CositoScene, AoAoScene], # oleada 1
+		1: [AoAoScene, CositoScene, AoAoScene, CositoScene, AoAoScene, CositoScene], # oleada 2
 	}
 
 	perdiste_panel.visible = false
@@ -32,11 +35,14 @@ func _ready():
 	vidas_progress_bar.value = enemigos_maximos
 	vidas_restantes = enemigos_maximos
 	enemigos_timer.timeout.connect(_on_EnemyTimer_timeout)
+
 	if enemigos_puntos.size() > 0:
 		enemigos_timer.start()
 		print_rich("[color=green]Se cargaron los marcadores de salida de los enemigos.[/color]")
 	else:
 		print_rich("[color=red]Faltan cargar los marcadores de salida de los enemigos.[/color]")
+
+	enemigos_oledas = 1
 
 func _on_EnemyTimer_timeout():
 	if enemigos_cantidad_instanciadas < enemigos_maximos:

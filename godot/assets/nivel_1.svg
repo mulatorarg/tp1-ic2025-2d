@@ -1,0 +1,1097 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1366"
+   height="768"
+   viewBox="0 0 1366 768"
+   version="1.1"
+   id="svg57"
+   sodipodi:docname="nivel_1.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview57"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.74301455"
+     inkscape:cx="581.41526"
+     inkscape:cy="508.06542"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg57" />
+  <!-- Fondo -->
+  <defs
+     id="defs8">
+    <linearGradient
+       id="sky"
+       x1="0"
+       x2="0"
+       y1="0"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#bfefff"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#9fd6b8"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       id="water"
+       x1="0"
+       x2="0"
+       y1="0"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#78c7e6"
+         id="stop3" />
+      <stop
+         offset="1"
+         stop-color="#54a6c0"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       id="hutRoof"
+       x1="0"
+       x2="0"
+       y1="0"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#e3b15a"
+         id="stop5" />
+      <stop
+         offset="1"
+         stop-color="#c58f3f"
+         id="stop6" />
+    </linearGradient>
+    <linearGradient
+       id="tile"
+       x1="0"
+       x2="0"
+       y1="0"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#d6a76b"
+         id="stop7" />
+      <stop
+         offset="1"
+         stop-color="#c89252"
+         id="stop8" />
+    </linearGradient>
+    <filter
+       id="softShadow"
+       x="-0.03296005"
+       y="-0.012810752"
+       width="1.0633435"
+       height="1.0233371">
+      <feDropShadow
+         dx="0"
+         dy="6"
+         stdDeviation="8"
+         flood-color="#000"
+         flood-opacity="0.15" />
+    </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient57"
+       x1="-1.8316219"
+       y1="-2.1838569"
+       x2="-1.8316219"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient58"
+       x1="115.39218"
+       y1="-2.1838569"
+       x2="115.39218"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient59"
+       x1="232.61598"
+       y1="-2.1838569"
+       x2="232.61598"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient60"
+       x1="349.83978"
+       y1="-2.1838569"
+       x2="349.83978"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient61"
+       x1="467.06358"
+       y1="-2.1838569"
+       x2="467.06358"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient62"
+       x1="584.28738"
+       y1="-2.1838569"
+       x2="584.28738"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient63"
+       x1="701.51118"
+       y1="-2.1838569"
+       x2="701.51118"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient64"
+       x1="-1.8316219"
+       y1="-2.1838569"
+       x2="-1.8316219"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient65"
+       x1="115.39218"
+       y1="-2.1838569"
+       x2="115.39218"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient66"
+       x1="232.61598"
+       y1="-2.1838569"
+       x2="232.61598"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient67"
+       x1="349.83978"
+       y1="-2.1838569"
+       x2="349.83978"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient68"
+       x1="467.06358"
+       y1="-2.1838569"
+       x2="467.06358"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient69"
+       x1="584.28738"
+       y1="-2.1838569"
+       x2="584.28738"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient70"
+       x1="701.51118"
+       y1="-2.1838569"
+       x2="701.51118"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient71"
+       x1="-1.8316219"
+       y1="-2.1838569"
+       x2="-1.8316219"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient72"
+       x1="115.39218"
+       y1="-2.1838569"
+       x2="115.39218"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient73"
+       x1="232.61598"
+       y1="-2.1838569"
+       x2="232.61598"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient74"
+       x1="349.83978"
+       y1="-2.1838569"
+       x2="349.83978"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient75"
+       x1="467.06358"
+       y1="-2.1838569"
+       x2="467.06358"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient76"
+       x1="584.28738"
+       y1="-2.1838569"
+       x2="584.28738"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient77"
+       x1="701.51118"
+       y1="-2.1838569"
+       x2="701.51118"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient78"
+       x1="-1.8316219"
+       y1="-2.1838569"
+       x2="-1.8316219"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient79"
+       x1="115.39218"
+       y1="-2.1838569"
+       x2="115.39218"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient80"
+       x1="232.61598"
+       y1="-2.1838569"
+       x2="232.61598"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient81"
+       x1="349.83978"
+       y1="-2.1838569"
+       x2="349.83978"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient82"
+       x1="467.06358"
+       y1="-2.1838569"
+       x2="467.06358"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient83"
+       x1="584.28738"
+       y1="-2.1838569"
+       x2="584.28738"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient84"
+       x1="701.51118"
+       y1="-2.1838569"
+       x2="701.51118"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient85"
+       x1="-1.8316219"
+       y1="-2.1838569"
+       x2="-1.8316219"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient86"
+       x1="115.39218"
+       y1="-2.1838569"
+       x2="115.39218"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient87"
+       x1="232.61598"
+       y1="-2.1838569"
+       x2="232.61598"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient88"
+       x1="349.83978"
+       y1="-2.1838569"
+       x2="349.83978"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient89"
+       x1="467.06358"
+       y1="-2.1838569"
+       x2="467.06358"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient90"
+       x1="584.28738"
+       y1="-2.1838569"
+       x2="584.28738"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tile"
+       id="linearGradient91"
+       x1="701.51118"
+       y1="-2.1838569"
+       x2="701.51118"
+       y2="111.3767"
+       gradientTransform="matrix(1.0919284,0,0,0.91581094,121.12818,242.25636)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <!-- Sky -->
+  <rect
+     width="1366"
+     height="768"
+     fill="url(#sky)"
+     id="rect8" />
+  <!-- Distant treeline -->
+  <g
+     id="horizon">
+    <rect
+       x="0"
+       y="180"
+       width="1366"
+       height="130"
+       fill="#9ad08a"
+       id="rect9" />
+    <g
+       fill="#6fb06b"
+       id="g13">
+      <ellipse
+         cx="120"
+         cy="230"
+         rx="120"
+         ry="48"
+         id="ellipse9" />
+      <ellipse
+         cx="300"
+         cy="220"
+         rx="150"
+         ry="60"
+         id="ellipse10" />
+      <ellipse
+         cx="600"
+         cy="210"
+         rx="220"
+         ry="80"
+         id="ellipse11" />
+      <ellipse
+         cx="980"
+         cy="215"
+         rx="160"
+         ry="64"
+         id="ellipse12" />
+      <ellipse
+         cx="1250"
+         cy="225"
+         rx="120"
+         ry="48"
+         id="ellipse13" />
+    </g>
+  </g>
+  <!-- River -->
+  <g
+     id="river">
+    <path
+       d="M0 260 C220 240, 420 240, 680 260 C920 280, 1100 300, 1366 260 L1366 330 L0 330 Z"
+       fill="url(#water)"
+       id="path13" />
+    <path
+       d="M0 290 C220 270, 420 270, 680 290 C920 310, 1100 330, 1366 290"
+       fill="#8fd6e9"
+       opacity="0.35"
+       id="path14" />
+  </g>
+  <!-- Foreground grass -->
+  <rect
+     x="0"
+     y="330"
+     width="1366"
+     height="438"
+     fill="#7fc06b"
+     id="rect14" />
+  <!-- Grid (board) parameters -->
+  <!-- We'll center the grid horizontally with slight offset to right so hut on left is near edge -->
+  <!-- Grid: 7 cols x 5 rows, each tile 120x100, spacing 8 -->
+  <g
+     id="board"
+     transform="translate(238.87182,137.74364)">
+    <!-- board background shadow -->
+    <rect
+       x="-12"
+       y="-12"
+       width="892"
+       height="532"
+       rx="8"
+       fill="rgba(0,0,0,0.03)"
+       id="rect15"
+       ry="8" />
+    <!-- tiles container (no perspective) -->
+    <g
+       id="tiles">
+      <!-- parameters -->
+      <!-- tileWidth = 120; tileHeight = 100; cols=7; rows=5; gap=8 -->
+      <!-- draw tiles -->
+      <!-- Use nested loops conceptually - here expanded -->
+      <!-- Row 0 -->
+      <g
+         id="row0">
+        <rect
+           x="0"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect16"
+           style="fill:url(#linearGradient57)"
+           ry="10" />
+        <rect
+           x="128"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect17"
+           style="fill:url(#linearGradient58)"
+           ry="10" />
+        <rect
+           x="256"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect18"
+           style="fill:url(#linearGradient59)"
+           ry="10" />
+        <rect
+           x="384"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect19"
+           style="fill:url(#linearGradient60)"
+           ry="10" />
+        <rect
+           x="512"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect20"
+           style="fill:url(#linearGradient61)"
+           ry="10" />
+        <rect
+           x="640"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect21"
+           style="fill:url(#linearGradient62)"
+           ry="10" />
+        <rect
+           x="768"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect22"
+           style="fill:url(#linearGradient63)"
+           ry="10" />
+      </g>
+      <!-- Row 1 -->
+      <g
+         id="row1"
+         transform="translate(0,108)">
+        <rect
+           x="0"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect23"
+           style="fill:url(#linearGradient64)"
+           ry="10" />
+        <rect
+           x="128"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect24"
+           style="fill:url(#linearGradient65)"
+           ry="10" />
+        <rect
+           x="256"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect25"
+           style="fill:url(#linearGradient66)"
+           ry="10" />
+        <rect
+           x="384"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect26"
+           style="fill:url(#linearGradient67)"
+           ry="10" />
+        <rect
+           x="512"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect27"
+           style="fill:url(#linearGradient68)"
+           ry="10" />
+        <rect
+           x="640"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect28"
+           style="fill:url(#linearGradient69)"
+           ry="10" />
+        <rect
+           x="768"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect29"
+           style="fill:url(#linearGradient70)"
+           ry="10" />
+      </g>
+      <!-- Row 2 -->
+      <g
+         id="row2"
+         transform="translate(0,216)">
+        <rect
+           x="0"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect30"
+           style="fill:url(#linearGradient71)"
+           ry="10" />
+        <rect
+           x="128"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect31"
+           style="fill:url(#linearGradient72)"
+           ry="10" />
+        <rect
+           x="256"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect32"
+           style="fill:url(#linearGradient73)"
+           ry="10" />
+        <rect
+           x="384"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect33"
+           style="fill:url(#linearGradient74)"
+           ry="10" />
+        <rect
+           x="512"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect34"
+           style="fill:url(#linearGradient75)"
+           ry="10" />
+        <rect
+           x="640"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect35"
+           style="fill:url(#linearGradient76)"
+           ry="10" />
+        <rect
+           x="768"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect36"
+           style="fill:url(#linearGradient77)"
+           ry="10" />
+      </g>
+      <!-- Row 3 -->
+      <g
+         id="row3"
+         transform="translate(0,324)">
+        <rect
+           x="0"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect37"
+           style="fill:url(#linearGradient78)"
+           ry="10" />
+        <rect
+           x="128"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect38"
+           style="fill:url(#linearGradient79)"
+           ry="10" />
+        <rect
+           x="256"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect39"
+           style="fill:url(#linearGradient80)"
+           ry="10" />
+        <rect
+           x="384"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect40"
+           style="fill:url(#linearGradient81)"
+           ry="10" />
+        <rect
+           x="512"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect41"
+           style="fill:url(#linearGradient82)"
+           ry="10" />
+        <rect
+           x="640"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect42"
+           style="fill:url(#linearGradient83)"
+           ry="10" />
+        <rect
+           x="768"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect43"
+           style="fill:url(#linearGradient84)"
+           ry="10" />
+      </g>
+      <!-- Row 4 -->
+      <g
+         id="row4"
+         transform="translate(0,432)">
+        <rect
+           x="0"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect44"
+           style="fill:url(#linearGradient85)"
+           ry="10" />
+        <rect
+           x="128"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect45"
+           style="fill:url(#linearGradient86)"
+           ry="10" />
+        <rect
+           x="256"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect46"
+           style="fill:url(#linearGradient87)"
+           ry="10" />
+        <rect
+           x="384"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect47"
+           style="fill:url(#linearGradient88)"
+           ry="10" />
+        <rect
+           x="512"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect48"
+           style="fill:url(#linearGradient89)"
+           ry="10" />
+        <rect
+           x="640"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect49"
+           style="fill:url(#linearGradient90)"
+           ry="10" />
+        <rect
+           x="768"
+           y="0"
+           width="120"
+           height="100"
+           rx="10"
+           fill="url(#tile)"
+           stroke="#8f6b3b"
+           stroke-width="4"
+           id="rect50"
+           style="fill:url(#linearGradient91)"
+           ry="10" />
+      </g>
+    </g>
+  </g>
+  <!-- Hut: placed to the LEFT of the board and vertically centered with board -->
+  <!-- Board transform = translate(360,380). Board height spans rows: total tile area height = 5*100 + 4*8 = 524 (approx).
+       We'll align hut center to board center (y = 380 + 524/2 ~ 642). Place hut left at x ~ 120 -->
+  <g
+     id="hut"
+     transform="translate(80, 642)"
+     filter="url(#softShadow)">
+    <!-- hut base -->
+    <rect
+       x="0"
+       y="-60"
+       width="180"
+       height="120"
+       rx="8"
+       fill="#b57845"
+       stroke="#8a5b31"
+       stroke-width="4"
+       id="rect51" />
+    <!-- door -->
+    <rect
+       x="56"
+       y="-14"
+       width="68"
+       height="74"
+       rx="6"
+       fill="#6d3e21"
+       stroke="#4b2a16"
+       stroke-width="3"
+       id="rect52" />
+    <!-- roof -->
+    <path
+       d="M-16 -60 L90 -130 L186 -60 Z"
+       fill="url(#hutRoof)"
+       stroke="#9a6d3f"
+       stroke-width="4"
+       id="path52" />
+    <!-- roof thatch lines -->
+    <g
+       stroke="#c98f4a"
+       stroke-width="2"
+       stroke-linecap="round"
+       opacity="0.9"
+       id="g55">
+      <path
+         d="M-8 -75 Q30 -100 70 -78"
+         id="path53" />
+      <path
+         d="M10 -85 Q50 -120 90 -86"
+         id="path54" />
+      <path
+         d="M48 -96 Q88 -128 130 -98"
+         id="path55" />
+    </g>
+    <!-- small plants by hut -->
+    <g
+       fill="#4b9a4b"
+       id="g56">
+      <ellipse
+         cx="12"
+         cy="10"
+         rx="14"
+         ry="8"
+         id="ellipse55" />
+      <ellipse
+         cx="168"
+         cy="20"
+         rx="12"
+         ry="6"
+         id="ellipse56" />
+    </g>
+  </g>
+  <!-- Foreground decorative plants (left/right) -->
+  <g
+     id="foreground">
+    <path
+       d="M12 690 C40 650, 120 650, 140 690 L12 690 Z"
+       fill="#2f8f4a"
+       opacity="0.95"
+       id="path56" />
+    <path
+       d="M1240 680 C1220 650, 1280 640, 1320 680 L1240 680 Z"
+       fill="#2f8f4a"
+       opacity="0.95"
+       id="path57" />
+  </g>
+  <!-- Legend / helper text (optional, can be removed) -->
+  <g
+     font-family="Segoe UI, Arial, sans-serif"
+     font-size="14"
+     fill="#2b4b2a"
+     id="g57">
+    <text
+       x="12"
+       y="24"
+       id="text57">Rubí: Guardianes del Litoral — Tablero Nivel 1 (1366×768)</text>
+  </g>
+</svg>

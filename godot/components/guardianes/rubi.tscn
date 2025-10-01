@@ -1,8 +1,8 @@
 [gd_scene load_steps=19 format=3 uid="uid://c52mqnck72b7y"]
 
-[ext_resource type="Script" uid="uid://cwgikxjgg51yn" path="res://components/guardianes/rubi.gd" id="1_u3kor"]
-[ext_resource type="Texture2D" uid="uid://b4wqj2cydeq7n" path="res://assets/guardianes/Rubi1-attack.png" id="2_s7tyc"]
-[ext_resource type="Texture2D" uid="uid://cm2x1v152wdsb" path="res://assets/guardianes/Rubi1-idle.png" id="2_u3kor"]
+[ext_resource type="Script" uid="uid://c2b3g5rpq6pih" path="res://components/guardianes/rubi.gd" id="1_u3kor"]
+[ext_resource type="Texture2D" uid="uid://cm176mg3v27n8" path="res://assets/guardianes/Rubi1-attack.png" id="2_s7tyc"]
+[ext_resource type="Texture2D" uid="uid://d05v4dl6ssl77" path="res://assets/guardianes/Rubi1-idle.png" id="2_u3kor"]
 [ext_resource type="Texture2D" uid="uid://7kbuw187kh36" path="res://assets/sfx/explosion.png" id="3_aq13o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aq13o"]

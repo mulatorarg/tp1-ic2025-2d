@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dblah6y2o6bdt"]
 
-[ext_resource type="Script" uid="uid://305wva1hlm2d" path="res://components/guardian_seleccion.gd" id="1_48pyv"]
+[ext_resource type="Script" uid="uid://e44ut4egh1xy" path="res://components/guardian_seleccion.gd" id="1_48pyv"]
 [ext_resource type="FontFile" uid="uid://bjbgb2tkw7d04" path="res://assets/fonts/River Adventurer.ttf" id="4_r8nnp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ma4t3"]

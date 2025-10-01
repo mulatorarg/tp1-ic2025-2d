@@ -39,4 +39,4 @@ func atacar():
 	get_parent().add_child(disparo)
 
 func recursos_disponibles():
-	return RecursosManager.dispone_recursos({"mana": recurso_mana, "energia": recurso_energia})
+	return GameManager.dispone_recursos({"mana": recurso_mana, "energia": recurso_energia})

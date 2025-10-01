@@ -9,9 +9,9 @@ class_name Celda
 
 func _can_drop_data(_pos, data):
 	#print(_pos, data)
-	return data.costo <= RecursosManager.energia
+	return data.costo <= GameManager.energia
 
 func _drop_data(_pos, data):
 	if grid.is_celda_disponible(row, col):
-		RecursosManager.energia -= data.costo
+		GameManager.energia -= data.costo
 		grid.insertar_guardian(data.escena, row, col)

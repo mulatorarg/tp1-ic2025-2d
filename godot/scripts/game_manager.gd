@@ -1,16 +1,27 @@
 extends Node
 ## Clase Singleton que gestiona datos de los recursos del Player.
 
-signal recursos_changed ## Ocurre cuando se modifica valor de algún recurso, como la energía o el maná.
+## Ocurre cuando se modifica valor de algún recurso, como la energía o el maná.
+signal recursos_changed
+# ## Ocurre cuando .
+# signal oleadas_changed
 
-var mana := 50 ## Nivel de maná para .
-var energia := 150: ## Nivel de energía para .
-	set(value):
-		energia = value
+## Nivel de maná para .
+var mana := 50:
+	set(new_value):
+		mana = new_value
 		recursos_changed.emit()
 
-var salud := 100 ## Valor de vida del usuario.
-var nivel := 1 ## Nivel del usuario.
+## Nivel de energía para .
+var energia := 100:
+	set(new_value):
+		energia = new_value
+		recursos_changed.emit()
+
+## Valor de vida del usuario.
+var salud := 100
+## Nivel del usuario.
+var nivel := 1
 
 ## Sumar recursos (maná, energía o salud) según valor pasado por parámetro.
 func sumar_recursos(tipo: String, cantidad: int):

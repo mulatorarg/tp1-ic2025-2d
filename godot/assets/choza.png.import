@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baeosbjnqxe0y"
-path="res://.godot/imported/logo.png-e2220799298e3631eb0e245316e0501a.ctex"
+uid="uid://i6mpbp310jgy"
+path="res://.godot/imported/choza.png-b43c822ea62bc495cb300a0dbc4e1140.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/logo.png"
-dest_files=["res://.godot/imported/logo.png-e2220799298e3631eb0e245316e0501a.ctex"]
+source_file="res://assets/choza.png"
+dest_files=["res://.godot/imported/choza.png-b43c822ea62bc495cb300a0dbc4e1140.ctex"]
 
 [params]
 

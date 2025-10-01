@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgljvjeje4l4b"]
 
-[ext_resource type="Script" uid="uid://7e3dnugfnnb2" path="res://components/guardian_disparo.gd" id="1_yflqx"]
+[ext_resource type="Script" uid="uid://c5eugovd2fpg" path="res://components/guardian_disparo.gd" id="1_yflqx"]
 [ext_resource type="Texture2D" uid="uid://cyy0qhsbykdow" path="res://assets/sfx/disparo1.png" id="2_nxfh6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yflqx"]

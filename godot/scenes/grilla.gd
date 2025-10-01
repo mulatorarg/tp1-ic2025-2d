@@ -7,11 +7,11 @@ class_name Grilla
 @export var grilla_celda_tamaño := Vector2(128, 180) ## Tamaño de los sprite de la grilla.
 
 var grilla_posiciones: Array = [
-	[Vector2(201, 308), Vector2(332, 308), Vector2(455, 308), Vector2(576, 308), Vector2(701, 308), Vector2(818, 308), Vector2(944, 308)],
-	[Vector2(178, 372), Vector2(316, 372), Vector2(442, 372), Vector2(575, 372), Vector2(705, 372), Vector2(834, 372), Vector2(960, 372)],
-	[Vector2(148, 440), Vector2(296, 440), Vector2(431, 440), Vector2(571, 440), Vector2(708, 440), Vector2(844, 440), Vector2(981, 440)],
-	[Vector2(117, 518), Vector2(272, 518), Vector2(418, 518), Vector2(563, 518), Vector2(711, 518), Vector2(861, 518), Vector2(1007, 518)],
-	[Vector2(92, 600), Vector2(245, 600), Vector2(403, 600), Vector2(560, 600), Vector2(717, 600), Vector2(873, 600), Vector2(1027, 600)]
+	[Vector2i(267.0, 277.0), Vector2i(388.0, 277.0), Vector2i(508.0, 277.0), Vector2i(618.0, 277.0), Vector2i(736.0, 277.0), Vector2i(857.0, 277.0), Vector2i(973.0, 277.0)],
+	[Vector2i(216.0, 341.0), Vector2i(354.0, 341.0), Vector2i(480.0, 341.0), Vector2i(613.0, 341.0), Vector2i(743.0, 341.0), Vector2i(872.0, 341.0), Vector2i(998.0, 341.0)],
+	[Vector2i(161.0, 390.0), Vector2i(309.0, 390.0), Vector2i(456.0, 390.0), Vector2i(604.0, 390.0), Vector2i(750.0, 390.0), Vector2i(896.0, 390.0), Vector2i(1040.0, 390.0)],
+	[Vector2i(96.0, 447.0), Vector2i(267.0, 447.0), Vector2i(436.0, 447.0), Vector2i(596.0, 447.0), Vector2i(758.0, 447.0), Vector2i(926.0, 447.0), Vector2i(1086.0, 447.0)],
+	[Vector2i(54.0, 535.0), Vector2i(218.0, 535.0), Vector2i(392.0, 535.0), Vector2i(578.0, 535.0), Vector2i(764.0, 535.0), Vector2i(950.0, 535.0), Vector2i(1130.0, 535.0)]
 ]
 
 # Diccionario para ir guardando los guardianes que coloco en las celdas

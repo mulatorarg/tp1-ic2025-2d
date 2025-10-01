@@ -23,8 +23,7 @@ boot_splash/minimum_display_time=300
 
 [autoload]
 
-RecursosManager="*res://scripts/recursos_manager.gd"
-OleadasManager="*res://scripts/oleadas_manager.gd"
+GameManager="*res://scripts/game_manager.gd"
 
 [display]
 

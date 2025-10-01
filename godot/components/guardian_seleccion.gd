@@ -30,7 +30,7 @@ var audio_sin_recursos = preload("res://assets/audios/sin_recursos_suficientes.o
 				texture_rect.texture = new_texture
 
 func _ready() -> void:
-	RecursosManager.recursos_changed.connect(_on_recursos_changed_emit)
+	GameManager.recursos_changed.connect(_on_recursos_changed_emit)
 	if textura:
 		texture_rect.texture = textura
 	if guardian_scene:
@@ -43,7 +43,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 		print_rich("[color=red]No se seleccionó Guardian.[/color]")
 		return null
 
-	if RecursosManager.energia >= costo_energia:
+	if GameManager.energia >= costo_energia:
 		var preview := TextureRect.new()
 		preview.texture = icon.texture
 		preview.custom_minimum_size = Vector2(128, 180)
@@ -60,7 +60,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 		return null
 
 func _on_recursos_changed_emit() -> void:
-	if RecursosManager.energia >= costo_energia:
+	if GameManager.energia >= costo_energia:
 		modulate = Color(1,1,1,1)
 	else:
 		modulate = Color(0.6,0.6,0.6,.96)
