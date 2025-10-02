@@ -1,6 +1,6 @@
 extends Node2D
 ## Pantalla principal. Prueba de conceptos de arte y jugabilidad. Ponele...
-class_name Nivel1
+class_name Nivel2
 
 @export var enemigos_puntos: Array[Marker2D] ## Puntos de partida de los enemigos.
 
@@ -14,7 +14,8 @@ class_name Nivel1
 @onready var enemigos_progress_bar: ProgressBar = $Hud/HBoxContainer/EnemigosProgressBar
 @onready var vidas_progress_bar: ProgressBar = $Hud/HBoxContainer/VidasProgressBar
 @onready var perder_area: Area2D = $PerderArea
-@onready var perdiste_panel: Panel = $Hud/PerdistePanel
+@onready var perdiste_panel: Panel = %PerdistePanel
+@onready var ganaste_panel: Panel = %GanastePanel
 
 var oleadas : Array = []
 var enemigos_cantidad_instanciadas : int = 0

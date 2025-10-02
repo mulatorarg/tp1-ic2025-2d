@@ -6,7 +6,7 @@ class_name Enemigo
 @onready var gpu_particles_2d_2: GPUParticles2D = $GPUParticles2D2
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var label: Label = $Label
 @onready var progress_bar: ProgressBar = $ProgressBar
 
@@ -31,10 +31,11 @@ func actualizar_ui() -> void:
 	progress_bar.max_value = salud
 	progress_bar.value = salud
 	label.text = nombre
-	sprite_2d.texture = textura
+	#sprite_2d.texture = textura
 
 func _process(delta):
-	position.x -= velocidad * delta
+	if not Engine.is_editor_hint():
+		position.x -= velocidad * delta
 
 func le_hacen_daño(cantidad):
 	salud_actual -= cantidad

@@ -1,12 +1,28 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2k2isc2hgrn1"]
+[gd_scene load_steps=15 format=3 uid="uid://b2k2isc2hgrn1"]
 
 [ext_resource type="Script" uid="uid://7dokeqqjipyt" path="res://components/enemies/enemigo.gd" id="1_jyq8c"]
+[ext_resource type="Texture2D" uid="uid://3pv0jhqf6jl6" path="res://assets/enemigos/aoao.png" id="2_psyu3"]
 [ext_resource type="Material" uid="uid://bdu4eb5c6wgqa" path="res://components/efectos/explosion_enemy.tres" id="3_btstc"]
 [ext_resource type="Texture2D" uid="uid://7kbuw187kh36" path="res://assets/sfx/explosion.png" id="3_psyu3"]
 [ext_resource type="Material" uid="uid://cj5q0eejg6mkr" path="res://components/efectos/damage_effect.tres" id="4_fto6i"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrmrk"]
+atlas = ExtResource("2_psyu3")
+region = Rect2(0, 0, 128, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o7q6s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrmrk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oj4ed"]
-size = Vector2(112, 182)
+size = Vector2(76, 110)
 
 [sub_resource type="Animation" id="Animation_kwlr3"]
 length = 0.001
@@ -83,9 +99,11 @@ collision_mask = 20
 script = ExtResource("1_jyq8c")
 nombre = "Ao Ao"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o7q6s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemies"]]
+position = Vector2(0, 20)
 shape = SubResource("RectangleShape2D_oj4ed")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

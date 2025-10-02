@@ -3,8 +3,6 @@ extends Node
 
 ## Ocurre cuando se modifica valor de algún recurso, como la energía o el maná.
 signal recursos_changed
-# ## Ocurre cuando .
-# signal oleadas_changed
 
 ## Nivel de maná para .
 var mana := 50:

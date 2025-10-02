@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://wlv8jp40sblc"]
+[gd_scene load_steps=15 format=3 uid="uid://wlv8jp40sblc"]
 
 [ext_resource type="Script" uid="uid://dp837g0xuog5y" path="res://components/guardianes/ndaaye.gd" id="1_bcpls"]
 [ext_resource type="Texture2D" uid="uid://b1g0633iceo5o" path="res://assets/guardianes/ndaaye.png" id="2_f5vo3"]
@@ -69,6 +69,11 @@ scale_max = 0.2
 color_ramp = SubResource("GradientTexture1D_2w218")
 alpha_curve = SubResource("CurveTexture_kwlr3")
 
+[sub_resource type="LabelSettings" id="LabelSettings_wshmw"]
+font_size = 20
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57drq"]
 bg_color = Color(0.705882, 0, 0.117647, 1)
 corner_radius_top_left = 6
@@ -113,6 +118,7 @@ offset_top = -144.0
 offset_right = 64.0
 offset_bottom = -121.0
 text = "Guardian"
+label_settings = SubResource("LabelSettings_wshmw")
 horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="."]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://dorjpv7e8xr3k"]
+
+[ext_resource type="Texture2D" uid="uid://bnwpvvwskiywk" path="res://assets/fondo1.png" id="1_0ay0p"]
+[ext_resource type="Script" uid="uid://bdwhkk0ko2f2f" path="res://scenes/ui/main.gd" id="1_vspwy"]
+[ext_resource type="Texture2D" uid="uid://bblhxw4spqaxq" path="res://assets/ui/uipack_rpg_sheet.png" id="2_02nsg"]
+[ext_resource type="Texture2D" uid="uid://baeosbjnqxe0y" path="res://assets/logo.png" id="2_2p1s2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vspwy"]
+atlas = ExtResource("2_02nsg")
+region = Rect2(0, 376, 100, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7n028"]
+texture = SubResource("AtlasTexture_vspwy")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vspwy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0ay0p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(500, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -265.25
+offset_right = 250.0
+offset_bottom = 265.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7n028")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+texture = ExtResource("2_2p1s2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ComenzarButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 48)
+layout_mode = 2
+text = "COMENZAR"
+
+[node name="OpcionesButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 48)
+layout_mode = 2
+text = "OPCIONES"
+
+[node name="SalirButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 48)
+layout_mode = 2
+text = "SALIR"

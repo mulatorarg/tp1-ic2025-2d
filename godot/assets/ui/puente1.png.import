@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk1gegf2gyoqs"
-path="res://.godot/imported/nivel_1.svg-bbc7a1e0f3893d8fcc62af40df71975f.ctex"
+uid="uid://bx3t0e2ijmj6w"
+path="res://.godot/imported/puente1.png-91013ecf36d75f300636a2f0133a09d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/nivel_1.svg"
-dest_files=["res://.godot/imported/nivel_1.svg-bbc7a1e0f3893d8fcc62af40df71975f.ctex"]
+source_file="res://assets/ui/puente1.png"
+dest_files=["res://.godot/imported/puente1.png-91013ecf36d75f300636a2f0133a09d4.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d06h4fy65rogq"
-path="res://.godot/imported/nivel_base.svg-1c604834da633ac087973f745aae0a28.ctex"
+uid="uid://bblhxw4spqaxq"
+path="res://.godot/imported/uipack_rpg_sheet.png-6e7fac589e7f748b121c9b151de8b14e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/nivel_base.svg"
-dest_files=["res://.godot/imported/nivel_base.svg-1c604834da633ac087973f745aae0a28.ctex"]
+source_file="res://assets/ui/uipack_rpg_sheet.png"
+dest_files=["res://.godot/imported/uipack_rpg_sheet.png-6e7fac589e7f748b121c9b151de8b14e.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

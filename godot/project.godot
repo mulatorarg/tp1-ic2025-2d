@@ -15,11 +15,11 @@ config/description="Adaptación de mitologías del litoral Argentino, al tipo *P
 s
 Desarrollado durante el cursado de VJ-GDT-01-25 - Desarrollo de Videojuegos con Godot."
 config/version="0.0.1"
-run/main_scene="uid://dt5ippn7egc2f"
+run/main_scene="uid://dorjpv7e8xr3k"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-boot_splash/image="uid://cm0gij7epvnvb"
-config/icon="uid://cgwyek42h322n"
-boot_splash/minimum_display_time=300
+boot_splash/bg_color=Color(0.13333334, 0.13333334, 0.13333334, 1)
+boot_splash/image="uid://ca6qyia5ykyc4"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 
@@ -36,6 +36,10 @@ window/stretch/mode="canvas_items"
 enemies="Se agrupan los enemigos del juego"
 pantalla=""
 
+[gui]
+
+theme/custom="uid://0i5khx1o2oh7"
+
 [layer_names]
 
 2d_physics/layer_1="Terreno"
@@ -49,6 +53,7 @@ pantalla=""
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true

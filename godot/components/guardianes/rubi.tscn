@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c52mqnck72b7y"]
+[gd_scene load_steps=20 format=3 uid="uid://c52mqnck72b7y"]
 
 [ext_resource type="Script" uid="uid://c2b3g5rpq6pih" path="res://components/guardianes/rubi.gd" id="1_u3kor"]
 [ext_resource type="Texture2D" uid="uid://cm176mg3v27n8" path="res://assets/guardianes/Rubi1-attack.png" id="2_s7tyc"]
@@ -107,6 +107,11 @@ scale_max = 0.2
 color_ramp = SubResource("GradientTexture1D_2w218")
 alpha_curve = SubResource("CurveTexture_kwlr3")
 
+[sub_resource type="LabelSettings" id="LabelSettings_s7tyc"]
+font_size = 20
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57drq"]
 bg_color = Color(0.705882, 0, 0.117647, 1)
 corner_radius_top_left = 6
@@ -156,6 +161,7 @@ offset_top = -144.0
 offset_right = 64.0
 offset_bottom = -121.0
 text = "Rubi"
+label_settings = SubResource("LabelSettings_s7tyc")
 horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
