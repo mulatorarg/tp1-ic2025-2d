@@ -1,10 +1,12 @@
 extends Node2D
-## Pantalla principal. Prueba de conceptos de arte y jugabilidad. Ponele...
 class_name Nivel2
 
-@export var enemigos_puntos: Array[Marker2D] ## Puntos de partida de los enemigos.
+## Nodo padre de los Marker2d que actúan como contenedor puntos de partida de los enemigos.
+@export var nodo_enemigos_puntos: Node2D
 
+## Segundos de espeta entre aparición de enemigo.
 @export var espera_entre_enemigos : float = 3.0
+## Segundos de espeta entre oleadas de enemigos.
 @export var espera_entre_oleadas : float = 2.0
 
 @onready var AoAoScene   = preload("res://components/enemies/aoao.tscn")
@@ -17,16 +19,18 @@ class_name Nivel2
 @onready var perdiste_panel: Panel = %PerdistePanel
 @onready var ganaste_panel: Panel = %GanastePanel
 
+var enemigos_puntos: Array[Marker2D] ## Puntos de partida de los enemigos.
 var oleadas : Array = []
 var enemigos_cantidad_instanciadas : int = 0
 var vidas_restantes : int = 0
 var enemigos_oleda_actual : int = 0 ## Cantidad de ordas de enemigos del nivel.
 var enemigos_cantidad_total := 0 ## Cantidad inicial de enemigos.
 var enemigos_emitir := 0 ## Enemigo actual a mostrar del array.
-
 var esparando := false
 
 func _ready():
+	
+	print_rich("[color=green]Iniciando el Nivel 1.[/color]")
 
 	oleadas = [
 		[AoAoScene, CositoScene, AoAoScene, CositoScene, AoAoScene], # oleada 1
@@ -38,11 +42,21 @@ func _ready():
 	perder_area.area_entered.connect(_on_perder_area_body_entered)
 	enemigos_timer.timeout.connect(_on_EnemyTimer_timeout)
 	enemigos_timer.wait_time = espera_entre_enemigos
+
+	enemigos_puntos.clear()
+	if nodo_enemigos_puntos:
+		for marcador in nodo_enemigos_puntos.get_children():
+			if marcador is Marker2D:
+				enemigos_puntos.append(marcador)
+	
+		print_rich("[color=green]Se encontraron %s marcadores de salida de enemigos!![/color]" % enemigos_puntos.size())
+		enemigos_timer.start()
+	else:
+		print_rich("[color=red]No se encontraron puntos de salida de enemigos. No se puede Jugar!![/color]")
 	
 	for oleada in oleadas:
 		enemigos_cantidad_total += oleada.size()
 
-	print("Cantidad de enemigos: %s." %enemigos_cantidad_total)
 	enemigos_progress_bar.max_value = enemigos_cantidad_total
 	enemigos_progress_bar.value = 0
 
@@ -51,18 +65,11 @@ func _ready():
 	vidas_restantes = 3
 
 	if oleadas.size() > 0:
-		print_rich("[color=green]Cantidad de Oleadas de enemigos correcta.[/color]")
+		print_rich("[color=green]Se encontraron %s Oleadas de enemigos.[/color]" % oleadas.size())
+		print_rich("[color=green]Se instanciarán %s Enemigos en total.[/color]" % enemigos_cantidad_total)
 		enemigos_oleda_actual = 0
 	else:
-		print_rich("[color=red]Cantidad de Oleadas de enemigos incorrecta.[/color]")
-		print_rich("[color=red]No se puede Jugar!![/color]")
-		
-	if enemigos_puntos.size() > 0:
-		enemigos_timer.start()
-		print_rich("[color=green]Se cargaron los marcadores de salida de los enemigos.[/color]")
-	else:
-		print_rich("[color=red]Faltan cargar los marcadores de salida de los enemigos.[/color]")
-		print_rich("[color=red]No se puede Jugar!![/color]")
+		print_rich("[color=red]Cantidad de Oleadas de enemigos incorrecta. No se puede Jugar!![/color]")
 
 
 func _on_EnemyTimer_timeout():

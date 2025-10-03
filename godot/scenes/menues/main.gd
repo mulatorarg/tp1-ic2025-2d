@@ -1,8 +1,6 @@
 extends Control
 
-#const LEVEL_SELECTOR = preload("res://scenes/screens/menues/level_selector/level_selector.tscn")
-#const SETTINGS = preload("res://scenes/screens/menues/settings/Settings.tscn")
-const NIVEL1 = preload("res://scenes/nivel1.tscn")
+const NIVEL1 = preload("res://scenes/niveles/nivel1/nivel1.tscn")
 
 @onready var comenzar_button: Button = %ComenzarButton
 @onready var opciones_button: Button = %OpcionesButton

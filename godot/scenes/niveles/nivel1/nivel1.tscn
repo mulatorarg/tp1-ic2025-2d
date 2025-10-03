@@ -1,18 +1,21 @@
-[gd_scene load_steps=23 format=3 uid="uid://dt5ippn7egc2f"]
+[gd_scene load_steps=26 format=3 uid="uid://dt5ippn7egc2f"]
 
-[ext_resource type="Script" uid="uid://dp23um6eopw7p" path="res://scenes/nivel2.gd" id="1_kkeat"]
+[ext_resource type="Script" uid="uid://dp23um6eopw7p" path="res://scenes/niveles/nivel2/nivel2.gd" id="1_kkeat"]
 [ext_resource type="Texture2D" uid="uid://c71gm0qq4p8g2" path="res://assets/nivel1.png" id="2_5u7j1"]
-[ext_resource type="Script" uid="uid://c2041kqpicf8h" path="res://scenes/hud.gd" id="3_5u7j1"]
+[ext_resource type="Script" uid="uid://c2041kqpicf8h" path="res://scenes/niveles/hud.gd" id="3_5u7j1"]
+[ext_resource type="Texture2D" uid="uid://dcwtdagvuf1bx" path="res://assets/ambiente/yacare.png" id="3_80s5i"]
+[ext_resource type="Texture2D" uid="uid://2h6xbo2epmpi" path="res://assets/ambiente/carpincho.png" id="4_ofuir"]
 [ext_resource type="PackedScene" uid="uid://dblah6y2o6bdt" path="res://components/guardian_seleccion.tscn" id="4_xjhar"]
-[ext_resource type="PackedScene" uid="uid://wlv8jp40sblc" path="res://components/guardianes/ndaaye.tscn" id="5_2mk4e"]
+[ext_resource type="PackedScene" uid="uid://wlv8jp40sblc" path="res://components/guardianes/ndaaye/ndaaye.tscn" id="5_2mk4e"]
+[ext_resource type="Texture2D" uid="uid://re2xqxmo02uw" path="res://assets/ambiente/planta.png" id="5_dxcar"]
 [ext_resource type="Texture2D" uid="uid://b1g0633iceo5o" path="res://assets/guardianes/ndaaye.png" id="6_kkeat"]
-[ext_resource type="PackedScene" uid="uid://c52mqnck72b7y" path="res://components/guardianes/rubi.tscn" id="6_ma4t3"]
+[ext_resource type="PackedScene" uid="uid://c52mqnck72b7y" path="res://components/guardianes/rubi/rubi.tscn" id="6_ma4t3"]
 [ext_resource type="Texture2D" uid="uid://dj1ox2twjqnyw" path="res://assets/ui/salud.png" id="8_4ewe0"]
 [ext_resource type="Texture2D" uid="uid://d05v4dl6ssl77" path="res://assets/guardianes/Rubi1-idle.png" id="8_5u7j1"]
 [ext_resource type="Texture2D" uid="uid://cuw1qh4yx56r7" path="res://assets/ui/mana.png" id="9_xjwxr"]
 [ext_resource type="Texture2D" uid="uid://c11hcwbtyts6e" path="res://assets/ui/energia.png" id="10_nmr0y"]
-[ext_resource type="Script" uid="uid://xbp1h6mb5oh" path="res://scenes/grilla.gd" id="11_bonye"]
-[ext_resource type="Script" uid="uid://4skynsdb43r" path="res://scenes/celda.gd" id="12_fs308"]
+[ext_resource type="Script" uid="uid://4skynsdb43r" path="res://scenes/niveles/celda.gd" id="12_fs308"]
+[ext_resource type="Script" uid="uid://bs47fnkd46t3l" path="res://scenes/niveles/nivel1/nivel1_grilla.gd" id="15_m3px3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tipki"]
 bg_color = Color(0, 0, 0, 0.0392157)
@@ -62,10 +65,11 @@ distance = -46.9335
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2mk4e"]
 size = Vector2(20, 768)
 
-[node name="Nivel1" type="Node2D"]
+[node name="Nivel1" type="Node2D" node_paths=PackedStringArray("nodo_enemigos_puntos")]
 script = ExtResource("1_kkeat")
+nodo_enemigos_puntos = NodePath("EnemigosPosiciones")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Fondo" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(1366, 768)
 anchors_preset = 15
 anchor_right = 1.0
@@ -77,10 +81,39 @@ grow_vertical = 2
 texture = ExtResource("2_5u7j1")
 expand_mode = 1
 
+[node name="Yacare" type="TextureRect" parent="Fondo"]
+layout_mode = 0
+offset_left = 1160.0
+offset_top = 565.0
+offset_right = 1360.0
+offset_bottom = 765.0
+texture = ExtResource("3_80s5i")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Carpincho" type="TextureRect" parent="Fondo"]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 530.0
+offset_right = 660.0
+offset_bottom = 730.0
+texture = ExtResource("4_ofuir")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Planta" type="TextureRect" parent="Fondo"]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 555.0
+offset_right = 775.0
+offset_bottom = 755.0
+texture = ExtResource("5_dxcar")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Hud" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("3_5u7j1")
 
 [node name="LateralPanel" type="Panel" parent="Hud"]
@@ -198,6 +231,8 @@ size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_kkeat")
 
 [node name="SalirButton" type="Button" parent="Hud/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 size_flags_vertical = 4
 text = "X"
@@ -318,19 +353,19 @@ vertical_alignment = 1
 [node name="EnemigosPosiciones" type="Node2D" parent="."]
 
 [node name="Marker2D1" type="Marker2D" parent="EnemigosPosiciones"]
-position = Vector2(1330, 287)
+position = Vector2(1330, 238)
 
 [node name="Marker2D2" type="Marker2D" parent="EnemigosPosiciones"]
-position = Vector2(1330, 341)
+position = Vector2(1330, 281)
 
 [node name="Marker2D3" type="Marker2D" parent="EnemigosPosiciones"]
-position = Vector2(1330, 390)
+position = Vector2(1330, 341)
 
 [node name="Marker2D4" type="Marker2D" parent="EnemigosPosiciones"]
-position = Vector2(1330, 454)
+position = Vector2(1330, 400)
 
 [node name="Marker2D5" type="Marker2D" parent="EnemigosPosiciones"]
-position = Vector2(1330, 535)
+position = Vector2(1330, 475)
 
 [node name="PerderArea" type="Area2D" parent="."]
 position = Vector2(187, 437)
@@ -343,10 +378,18 @@ metadata/_edit_group_ = true
 shape = SubResource("WorldBoundaryShape2D_27y2h")
 metadata/_edit_lock_ = true
 
+[node name="FueraPantallaArea" type="Area2D" parent="." groups=["pantalla"]]
+collision_layer = 128
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FueraPantallaArea"]
+position = Vector2(1400, 384)
+shape = SubResource("RectangleShape2D_2mk4e")
+
 [node name="Grilla" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("11_bonye")
+script = ExtResource("15_m3px3")
 metadata/_edit_lock_ = true
 
 [node name="Fila_1_Col_0" type="Panel" parent="Grilla"]
@@ -433,6 +476,18 @@ script = ExtResource("12_fs308")
 row = 0
 col = 6
 
+[node name="Fila_1_Col_7" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 0
+offset_left = 1035.0
+offset_top = 228.0
+offset_right = 1141.0
+offset_bottom = 278.0
+script = ExtResource("12_fs308")
+row = 0
+col = 6
+
 [node name="Fila_2_Col_0" type="Panel" parent="Grilla"]
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 40)
@@ -499,7 +554,7 @@ custom_minimum_size = Vector2(100, 40)
 layout_mode = 0
 offset_left = 835.0
 offset_top = 281.0
-offset_right = 955.0
+offset_right = 945.0
 offset_bottom = 335.0
 script = ExtResource("12_fs308")
 row = 1
@@ -509,9 +564,21 @@ col = 5
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 0
-offset_left = 955.0
+offset_left = 945.0
 offset_top = 280.0
-offset_right = 1075.0
+offset_right = 1055.0
+offset_bottom = 334.0
+script = ExtResource("12_fs308")
+row = 1
+col = 6
+
+[node name="Fila_2_Col_7" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 1055.0
+offset_top = 280.0
+offset_right = 1165.0
 offset_bottom = 334.0
 script = ExtResource("12_fs308")
 row = 1
@@ -521,9 +588,9 @@ col = 6
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(110, 40)
 layout_mode = 0
-offset_left = 193.0
+offset_left = 246.0
 offset_top = 341.0
-offset_right = 339.0
+offset_right = 366.0
 offset_bottom = 397.0
 script = ExtResource("12_fs308")
 row = 2
@@ -533,7 +600,7 @@ col = 0
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(110, 40)
 layout_mode = 0
-offset_left = 341.0
+offset_left = 367.0
 offset_top = 341.0
 offset_right = 487.0
 offset_bottom = 397.0
@@ -545,9 +612,9 @@ col = 1
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(110, 40)
 layout_mode = 0
-offset_left = 488.0
+offset_left = 490.0
 offset_top = 341.0
-offset_right = 634.0
+offset_right = 610.0
 offset_bottom = 397.0
 script = ExtResource("12_fs308")
 row = 2
@@ -557,9 +624,9 @@ col = 2
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(110, 40)
 layout_mode = 0
-offset_left = 636.0
+offset_left = 610.0
 offset_top = 341.0
-offset_right = 782.0
+offset_right = 730.0
 offset_bottom = 397.0
 script = ExtResource("12_fs308")
 row = 2
@@ -569,9 +636,9 @@ col = 3
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(110, 40)
 layout_mode = 0
-offset_left = 782.0
+offset_left = 730.0
 offset_top = 341.0
-offset_right = 928.0
+offset_right = 844.0
 offset_bottom = 397.0
 script = ExtResource("12_fs308")
 row = 2
@@ -581,9 +648,9 @@ col = 4
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(110, 40)
 layout_mode = 0
-offset_left = 928.0
+offset_left = 845.0
 offset_top = 341.0
-offset_right = 1074.0
+offset_right = 965.0
 offset_bottom = 397.0
 script = ExtResource("12_fs308")
 row = 2
@@ -593,9 +660,21 @@ col = 5
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(110, 40)
 layout_mode = 0
-offset_left = 1072.0
+offset_left = 965.0
 offset_top = 341.0
-offset_right = 1218.0
+offset_right = 1079.0
+offset_bottom = 397.0
+script = ExtResource("12_fs308")
+row = 2
+col = 6
+
+[node name="Fila_3_Col_7" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 341.0
+offset_right = 1200.0
 offset_bottom = 397.0
 script = ExtResource("12_fs308")
 row = 2
@@ -605,10 +684,10 @@ col = 6
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 0
-offset_left = 128.0
-offset_top = 398.0
-offset_right = 296.0
-offset_bottom = 476.0
+offset_left = 200.0
+offset_top = 400.0
+offset_right = 340.0
+offset_bottom = 470.0
 script = ExtResource("12_fs308")
 row = 3
 col = 0
@@ -617,10 +696,10 @@ col = 0
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 0
-offset_left = 299.0
-offset_top = 398.0
-offset_right = 467.0
-offset_bottom = 476.0
+offset_left = 340.0
+offset_top = 400.0
+offset_right = 472.0
+offset_bottom = 470.0
 script = ExtResource("12_fs308")
 row = 3
 col = 1
@@ -629,10 +708,10 @@ col = 1
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 0
-offset_left = 468.0
-offset_top = 398.0
-offset_right = 636.0
-offset_bottom = 476.0
+offset_left = 475.0
+offset_top = 400.0
+offset_right = 605.0
+offset_bottom = 470.0
 script = ExtResource("12_fs308")
 row = 3
 col = 2
@@ -641,10 +720,10 @@ col = 2
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 0
-offset_left = 628.0
-offset_top = 398.0
-offset_right = 796.0
-offset_bottom = 476.0
+offset_left = 605.0
+offset_top = 400.0
+offset_right = 733.0
+offset_bottom = 470.0
 script = ExtResource("12_fs308")
 row = 3
 col = 3
@@ -653,10 +732,10 @@ col = 3
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 0
-offset_left = 790.0
-offset_top = 398.0
-offset_right = 958.0
-offset_bottom = 476.0
+offset_left = 733.0
+offset_top = 400.0
+offset_right = 857.0
+offset_bottom = 470.0
 script = ExtResource("12_fs308")
 row = 3
 col = 4
@@ -665,10 +744,10 @@ col = 4
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 0
-offset_left = 958.0
-offset_top = 398.0
-offset_right = 1116.0
-offset_bottom = 476.0
+offset_left = 857.0
+offset_top = 400.0
+offset_right = 987.0
+offset_bottom = 470.0
 script = ExtResource("12_fs308")
 row = 3
 col = 5
@@ -677,10 +756,22 @@ col = 5
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 0
-offset_left = 1118.0
-offset_top = 398.0
-offset_right = 1286.0
-offset_bottom = 476.0
+offset_left = 987.0
+offset_top = 400.0
+offset_right = 1107.0
+offset_bottom = 470.0
+script = ExtResource("12_fs308")
+row = 3
+col = 6
+
+[node name="Fila_4_Col_7" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 1107.0
+offset_top = 400.0
+offset_right = 1237.0
+offset_bottom = 470.0
 script = ExtResource("12_fs308")
 row = 3
 col = 6
@@ -689,10 +780,10 @@ col = 6
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 0
-offset_left = 86.0
-offset_top = 486.0
-offset_right = 246.0
-offset_bottom = 576.0
+offset_left = 185.0
+offset_top = 475.0
+offset_right = 315.0
+offset_bottom = 565.0
 script = ExtResource("12_fs308")
 row = 4
 col = 0
@@ -701,10 +792,10 @@ col = 0
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 0
-offset_left = 250.0
-offset_top = 486.0
-offset_right = 422.0
-offset_bottom = 576.0
+offset_left = 315.0
+offset_top = 475.0
+offset_right = 455.0
+offset_bottom = 565.0
 script = ExtResource("12_fs308")
 row = 4
 col = 1
@@ -713,10 +804,10 @@ col = 1
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 0
-offset_left = 424.0
-offset_top = 486.0
-offset_right = 604.0
-offset_bottom = 576.0
+offset_left = 455.0
+offset_top = 475.0
+offset_right = 595.0
+offset_bottom = 565.0
 script = ExtResource("12_fs308")
 row = 4
 col = 2
@@ -725,10 +816,10 @@ col = 2
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 0
-offset_left = 610.0
-offset_top = 486.0
-offset_right = 790.0
-offset_bottom = 576.0
+offset_left = 595.0
+offset_top = 475.0
+offset_right = 735.0
+offset_bottom = 565.0
 script = ExtResource("12_fs308")
 row = 4
 col = 3
@@ -737,10 +828,10 @@ col = 3
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 0
-offset_left = 796.0
-offset_top = 486.0
-offset_right = 976.0
-offset_bottom = 576.0
+offset_left = 735.0
+offset_top = 475.0
+offset_right = 875.0
+offset_bottom = 565.0
 script = ExtResource("12_fs308")
 row = 4
 col = 4
@@ -749,10 +840,10 @@ col = 4
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 0
-offset_left = 982.0
-offset_top = 486.0
-offset_right = 1162.0
-offset_bottom = 576.0
+offset_left = 875.0
+offset_top = 475.0
+offset_right = 1009.0
+offset_bottom = 565.0
 script = ExtResource("12_fs308")
 row = 4
 col = 5
@@ -761,18 +852,22 @@ col = 5
 modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 0
-offset_left = 1162.0
-offset_top = 486.0
-offset_right = 1342.0
-offset_bottom = 576.0
+offset_left = 1009.0
+offset_top = 475.0
+offset_right = 1139.0
+offset_bottom = 565.0
 script = ExtResource("12_fs308")
 row = 4
 col = 6
 
-[node name="FueraPantallaArea" type="Area2D" parent="." groups=["pantalla"]]
-collision_layer = 128
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FueraPantallaArea"]
-position = Vector2(1400, 384)
-shape = SubResource("RectangleShape2D_2mk4e")
+[node name="Fila_5_Col_7" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 1140.0
+offset_top = 475.0
+offset_right = 1280.0
+offset_bottom = 565.0
+script = ExtResource("12_fs308")
+row = 4
+col = 6

@@ -1,18 +1,18 @@
 [gd_scene load_steps=23 format=3 uid="uid://ciupju48wqmy6"]
 
-[ext_resource type="Script" uid="uid://bebueck5xq0ot" path="res://scenes/nivel1.gd" id="1_wnw5i"]
+[ext_resource type="Script" uid="uid://bebueck5xq0ot" path="res://scenes/niveles/nivel1/nivel1.gd" id="1_wnw5i"]
 [ext_resource type="Texture2D" uid="uid://jjjttnxhl1n8" path="res://assets/nivel_1.png" id="2_o066t"]
-[ext_resource type="Script" uid="uid://c2041kqpicf8h" path="res://scenes/hud.gd" id="3_5uo66"]
+[ext_resource type="Script" uid="uid://c2041kqpicf8h" path="res://scenes/niveles/hud.gd" id="3_5uo66"]
 [ext_resource type="PackedScene" uid="uid://dblah6y2o6bdt" path="res://components/guardian_seleccion.tscn" id="4_8xhro"]
-[ext_resource type="PackedScene" uid="uid://wlv8jp40sblc" path="res://components/guardianes/ndaaye.tscn" id="5_roi11"]
+[ext_resource type="PackedScene" uid="uid://wlv8jp40sblc" path="res://components/guardianes/ndaaye/ndaaye.tscn" id="5_roi11"]
 [ext_resource type="Texture2D" uid="uid://b1g0633iceo5o" path="res://assets/guardianes/ndaaye.png" id="6_gjjf1"]
-[ext_resource type="PackedScene" uid="uid://c52mqnck72b7y" path="res://components/guardianes/rubi.tscn" id="7_cxqha"]
+[ext_resource type="PackedScene" uid="uid://c52mqnck72b7y" path="res://components/guardianes/rubi/rubi.tscn" id="7_cxqha"]
 [ext_resource type="Texture2D" uid="uid://d05v4dl6ssl77" path="res://assets/guardianes/Rubi1-idle.png" id="8_q3mfh"]
 [ext_resource type="Texture2D" uid="uid://dj1ox2twjqnyw" path="res://assets/ui/salud.png" id="9_4bhft"]
 [ext_resource type="Texture2D" uid="uid://cuw1qh4yx56r7" path="res://assets/ui/mana.png" id="10_2xgxk"]
 [ext_resource type="Texture2D" uid="uid://c11hcwbtyts6e" path="res://assets/ui/energia.png" id="11_yl4lc"]
-[ext_resource type="Script" uid="uid://xbp1h6mb5oh" path="res://scenes/grilla.gd" id="12_ddq8v"]
-[ext_resource type="Script" uid="uid://4skynsdb43r" path="res://scenes/celda.gd" id="13_puna5"]
+[ext_resource type="Script" uid="uid://br8vhkrpnwf0j" path="res://scenes/niveles/nivel2/nivel2_grilla.gd" id="12_i2t6k"]
+[ext_resource type="Script" uid="uid://4skynsdb43r" path="res://scenes/niveles/celda.gd" id="13_puna5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tipki"]
 bg_color = Color(0, 0, 0, 0.0392157)
@@ -198,6 +198,8 @@ size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_kkeat")
 
 [node name="SalirButton" type="Button" parent="Hud/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 4
 text = "X"
@@ -342,7 +344,7 @@ metadata/_edit_lock_ = true
 [node name="Grilla" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("12_ddq8v")
+script = ExtResource("12_i2t6k")
 metadata/_edit_lock_ = true
 
 [node name="Fila_1_Col_0" type="Panel" parent="Grilla"]

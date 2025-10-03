@@ -1,9 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dorjpv7e8xr3k"]
+[gd_scene load_steps=14 format=3 uid="uid://dorjpv7e8xr3k"]
 
 [ext_resource type="Texture2D" uid="uid://bnwpvvwskiywk" path="res://assets/fondo1.png" id="1_0ay0p"]
-[ext_resource type="Script" uid="uid://bdwhkk0ko2f2f" path="res://scenes/ui/main.gd" id="1_vspwy"]
+[ext_resource type="Script" uid="uid://bdwhkk0ko2f2f" path="res://scenes/menues/main.gd" id="1_vspwy"]
 [ext_resource type="Texture2D" uid="uid://bblhxw4spqaxq" path="res://assets/ui/uipack_rpg_sheet.png" id="2_02nsg"]
 [ext_resource type="Texture2D" uid="uid://baeosbjnqxe0y" path="res://assets/logo.png" id="2_2p1s2"]
+[ext_resource type="Texture2D" uid="uid://d05v4dl6ssl77" path="res://assets/guardianes/Rubi1-idle.png" id="3_cx0s8"]
+[ext_resource type="Texture2D" uid="uid://bakgpekcclyg6" path="res://assets/guardianes/amaru.png" id="4_51kgm"]
+[ext_resource type="Texture2D" uid="uid://d2a7c3kds4sko" path="res://assets/guardianes/todos - copia.png" id="4_w4msf"]
+[ext_resource type="Texture2D" uid="uid://b1g0633iceo5o" path="res://assets/guardianes/ndaaye.png" id="5_64ln8"]
+[ext_resource type="Texture2D" uid="uid://d1sdy0d8ubh0v" path="res://assets/ambiente/mono.png" id="6_64ln8"]
+[ext_resource type="Texture2D" uid="uid://dcwtdagvuf1bx" path="res://assets/ambiente/yacare.png" id="8_a1gh3"]
+[ext_resource type="Texture2D" uid="uid://2h6xbo2epmpi" path="res://assets/ambiente/carpincho.png" id="9_6g4ws"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vspwy"]
 atlas = ExtResource("2_02nsg")
@@ -25,7 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vspwy")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Fondo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,6 +42,72 @@ grow_vertical = 2
 texture = ExtResource("1_0ay0p")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Fondo"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 523.0
+offset_right = 139.0
+offset_bottom = 737.0
+texture = ExtResource("3_cx0s8")
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="Fondo"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 539.0
+offset_right = 311.0
+offset_bottom = 768.0
+texture = ExtResource("4_51kgm")
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="Fondo"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 536.0
+offset_right = 409.0
+offset_bottom = 750.0
+texture = ExtResource("5_64ln8")
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="Fondo"]
+layout_mode = 0
+offset_left = 1122.0
+offset_top = 318.0
+offset_right = 1410.0
+offset_bottom = 606.0
+texture = ExtResource("6_64ln8")
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="Fondo"]
+layout_mode = 0
+offset_left = 946.0
+offset_top = 450.0
+offset_right = 1343.0
+offset_bottom = 755.0
+texture = ExtResource("4_w4msf")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Yacare" type="TextureRect" parent="Fondo"]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 587.0
+offset_right = 932.0
+offset_bottom = 831.0
+texture = ExtResource("8_a1gh3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Carpincho" type="TextureRect" parent="Fondo"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 296.0
+offset_right = 171.0
+offset_bottom = 438.0
+texture = ExtResource("9_6g4ws")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(500, 350)
