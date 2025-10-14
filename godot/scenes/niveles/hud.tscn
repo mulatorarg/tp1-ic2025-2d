@@ -1,0 +1,352 @@
+[gd_scene load_steps=23 format=3 uid="uid://1oo3n8htxfu3"]
+
+[ext_resource type="Script" uid="uid://c2041kqpicf8h" path="res://scenes/niveles/hud.gd" id="1_g05h3"]
+[ext_resource type="PackedScene" uid="uid://dblah6y2o6bdt" path="res://components/guardian_seleccion.tscn" id="2_t3d3d"]
+[ext_resource type="PackedScene" uid="uid://wlv8jp40sblc" path="res://components/guardianes/tume_arandu/tume_arandu.tscn" id="3_wcmbq"]
+[ext_resource type="Texture2D" uid="uid://bakgpekcclyg6" path="res://assets/guardianes/amaru.png" id="4_wcmbq"]
+[ext_resource type="PackedScene" uid="uid://c52mqnck72b7y" path="res://components/guardianes/rubi/rubi.tscn" id="5_8ih0b"]
+[ext_resource type="Texture2D" uid="uid://dj1ox2twjqnyw" path="res://assets/ui/salud.png" id="7_0qaj2"]
+[ext_resource type="PackedScene" uid="uid://bco81yi5b1tl1" path="res://components/guardianes/porasy/porasy.tscn" id="7_wcmbq"]
+[ext_resource type="Texture2D" uid="uid://cuw1qh4yx56r7" path="res://assets/ui/mana.png" id="8_juyla"]
+[ext_resource type="Texture2D" uid="uid://baaibgw8gp3li" path="res://assets/guardianes/porasy.png" id="8_rsyqc"]
+[ext_resource type="PackedScene" uid="uid://ek6sashf8gdh" path="res://components/guardianes/guacamayo/guacamayo.tscn" id="9_8ih0b"]
+[ext_resource type="Texture2D" uid="uid://c11hcwbtyts6e" path="res://assets/ui/energia.png" id="9_jwapj"]
+[ext_resource type="PackedScene" uid="uid://c2dahnjhnnrmr" path="res://components/guardianes/marangatu/marangatu.tscn" id="10_mar"]
+[ext_resource type="Texture2D" uid="uid://dknuenrsosfm3" path="res://assets/guardianes/guacamayo.png" id="10_rsyqc"]
+[ext_resource type="PackedScene" uid="uid://bypkblehobfx7" path="res://components/guardianes/tupa/tupa.tscn" id="12_tupa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tipki"]
+bg_color = Color(0, 0, 0, 0.0392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sugp2"]
+bg_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyhfs"]
+bg_color = Color(0, 0.275677, 0.074219, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_auu1d"]
+font_size = 20
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.4509804)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kkeat"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb6dy"]
+bg_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trceg"]
+bg_color = Color(0.46398, 4.33658e-05, 0.394445, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_im20k"]
+font_size = 20
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.4509804)
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_g05h3")
+
+[node name="LateralPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(96, 0)
+anchors_preset = -1
+anchor_right = 0.08800001
+anchor_bottom = 1.0
+offset_right = -0.20800018
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tipki")
+
+[node name="MarginContainer" type="MarginContainer" parent="LateralPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LateralPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="guardian_seleccion_1" parent="LateralPanel/MarginContainer/VBoxContainer" instance=ExtResource("2_t3d3d")]
+layout_mode = 2
+tooltip_text = "Tumê Arandú
+Costo energía: 50"
+guardian_scene = ExtResource("3_wcmbq")
+textura = ExtResource("4_wcmbq")
+
+[node name="guardian_seleccion_2" parent="LateralPanel/MarginContainer/VBoxContainer" instance=ExtResource("2_t3d3d")]
+layout_mode = 2
+tooltip_text = "Rubi
+Costo energía: 250"
+guardian_scene = ExtResource("5_8ih0b")
+
+[node name="guardian_seleccion_3" parent="LateralPanel/MarginContainer/VBoxContainer" instance=ExtResource("2_t3d3d")]
+layout_mode = 2
+tooltip_text = "Porãsy
+Costo energía: 10"
+guardian_scene = ExtResource("7_wcmbq")
+textura = ExtResource("8_rsyqc")
+
+[node name="guardian_seleccion_4" parent="LateralPanel/MarginContainer/VBoxContainer" instance=ExtResource("2_t3d3d")]
+layout_mode = 2
+tooltip_text = "Guacamayo
+Costo energía: 10"
+guardian_scene = ExtResource("9_8ih0b")
+textura = ExtResource("10_rsyqc")
+
+[node name="guardian_seleccion_5" parent="LateralPanel/MarginContainer/VBoxContainer" instance=ExtResource("2_t3d3d")]
+layout_mode = 2
+tooltip_text = "Marangatú
+Costo energía: 12"
+guardian_scene = ExtResource("10_mar")
+
+[node name="guardian_seleccion_6" parent="LateralPanel/MarginContainer/VBoxContainer" instance=ExtResource("2_t3d3d")]
+layout_mode = 2
+tooltip_text = "Tupã
+Costo energía: 16"
+guardian_scene = ExtResource("12_tupa")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 24)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1128.0
+offset_bottom = 64.0
+grow_horizontal = 0
+
+[node name="SaludTexture" type="TextureRect" parent="HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("7_0qaj2")
+expand_mode = 3
+
+[node name="VidasProgressBar" type="ProgressBar" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jyhfs")
+value = 30.0
+show_percentage = false
+
+[node name="ManaTexture" type="TextureRect" parent="HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("8_juyla")
+expand_mode = 3
+
+[node name="ManaLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_auu1d")
+
+[node name="EnergiaTexture" type="TextureRect" parent="HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("9_jwapj")
+expand_mode = 3
+
+[node name="EnergiaLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_auu1d")
+
+[node name="Separador1" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kkeat")
+
+[node name="EnemigosLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Enemigos:"
+label_settings = SubResource("LabelSettings_auu1d")
+
+[node name="EnemigosProgressBar" type="ProgressBar" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_eb6dy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_trceg")
+value = 40.0
+show_percentage = false
+
+[node name="Separador2" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kkeat")
+
+[node name="OleadaLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Oleada: X / Y"
+label_settings = SubResource("LabelSettings_auu1d")
+
+[node name="Separador3" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kkeat")
+
+[node name="EnemigosLabel2" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Enemigos: X /Y"
+label_settings = SubResource("LabelSettings_auu1d")
+
+[node name="Separador4" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kkeat")
+
+[node name="SalirButton" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+size_flags_vertical = 4
+text = "X"
+
+[node name="PerdistePanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(400, 140)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -70.0
+offset_right = 200.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PerdisteLabel" type="Label" parent="PerdistePanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "¡¡ PERDISTE !!
+Usurparon tu choza"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GanastePanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(400, 140)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -70.0
+offset_right = 200.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GanasteLabel" type="Label" parent="GanastePanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 30
+text = "¡¡ GANASTE !!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NivelPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 50)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -57.0
+offset_right = 360.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="NivelLabel" type="Label" parent="NivelPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Nivel X - Zona donde se desarrolla"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AyudaLabel" type="Label" parent="NivelPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -372.0
+offset_top = -28.0
+offset_right = 374.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Arrastrá un guardian (de los disponibles) y ubícalos en el tablero. No permitas que ingresen a tu choza."
+label_settings = SubResource("LabelSettings_im20k")
+horizontal_alignment = 1
+autowrap_mode = 2

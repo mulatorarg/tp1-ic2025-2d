@@ -1,0 +1,117 @@
+[gd_scene load_steps=15 format=3 uid="uid://ch8t1jgbtvniv"]
+
+[ext_resource type="Script" uid="uid://7dokeqqjipyt" path="res://components/enemies/enemigo.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://3cjsnuwnlpaq" path="res://assets/enemigos/aoao.png" id="2_qh6in"]
+[ext_resource type="Material" uid="uid://bdu4eb5c6wgqa" path="res://components/efectos/explosion_enemy.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://7kbuw187kh36" path="res://assets/sfx/explosion.png" id="4"]
+[ext_resource type="Material" uid="uid://cj5q0eejg6mkr" path="res://components/efectos/damage_effect.tres" id="5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrmrk"]
+atlas = ExtResource("2_qh6in")
+region = Rect2(0, 0, 140, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7q6s"]
+atlas = ExtResource("2_qh6in")
+region = Rect2(140, 0, 140, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qh6in"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrmrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7q6s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(80, 116)
+
+[sub_resource type="Animation" id="Animation_WIN"]
+resource_name = "ganar"
+length = 0.3
+
+[sub_resource type="Animation" id="Animation_DIE"]
+resource_name = "morir"
+length = 0.3
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1"]
+_data = {
+&"ganar": SubResource("Animation_WIN"),
+&"morir": SubResource("Animation_DIE")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_BG"]
+bg_color = Color(0.705882, 0, 0.117647, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_FILL"]
+bg_color = Color(0, 0.705882, 0.117647, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Kurupi" type="Area2D" groups=["enemies"]]
+scale = Vector2(0.5, 0.5)
+collision_layer = 8
+collision_mask = 20
+script = ExtResource("1")
+velocidad = 65
+salud = 110
+premio_energia = 80
+nombre = "Kurupí"
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qh6in")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1")
+}
+
+[node name="GPUParticles2D1" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 30
+texture = ExtResource("4")
+explosiveness = 0.6
+randomness = 1.0
+process_material = ExtResource("3")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+process_material = ExtResource("5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -62.0
+offset_top = -136.0
+offset_right = 64.0
+offset_bottom = -113.0
+text = "Kurupí"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -64.0
+offset_top = -108.0
+offset_right = 64.0
+offset_bottom = -90.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_BG")
+theme_override_styles/fill = SubResource("StyleBoxFlat_FILL")
+max_value = 110.0
+value = 110.0
+show_percentage = false

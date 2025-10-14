@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://dblah6y2o6bdt"]
+
+[ext_resource type="Script" uid="uid://e44ut4egh1xy" path="res://components/guardian_seleccion.gd" id="1_48pyv"]
+[ext_resource type="Texture2D" uid="uid://d05v4dl6ssl77" path="res://assets/guardianes/rubi-idle.png" id="2_fe6tr"]
+[ext_resource type="FontFile" uid="uid://bjbgb2tkw7d04" path="res://assets/fonts/River Adventurer.ttf" id="4_r8nnp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ma4t3"]
+bg_color = Color(0.8646751, 0.86467516, 0.8646751, 0.23529412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_fe6tr"]
+font = ExtResource("4_r8nnp")
+font_size = 12
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5u7j1"]
+font = ExtResource("4_r8nnp")
+font_size = 18
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.431373)
+shadow_offset = Vector2(2, 2)
+
+[node name="GuardianSeleccion" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_ma4t3")
+script = ExtResource("1_48pyv")
+textura = ExtResource("2_fe6tr")
+
+[node name="ImagenTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("2_fe6tr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NombreLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "Rubi"
+label_settings = SubResource("LabelSettings_fe6tr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnergiaLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+text = "10"
+label_settings = SubResource("LabelSettings_5u7j1")
+horizontal_alignment = 1
+vertical_alignment = 1

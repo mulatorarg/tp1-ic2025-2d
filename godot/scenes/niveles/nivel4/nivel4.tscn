@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://wmx7h7rqscvv"]
+
+[ext_resource type="Script" uid="uid://uib6884loj3n" path="res://scenes/niveles/nivel4/nivel4.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dwkcci1ub7tmf" path="res://assets/niveles/nivel4.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://1oo3n8htxfu3" path="res://scenes/niveles/hud.tscn" id="4"]
+[ext_resource type="Script" uid="uid://br8vhkrpnwf0j" path="res://scenes/niveles/nivel2/nivel2_grilla.gd" id="5"]
+[ext_resource type="Script" uid="uid://4skynsdb43r" path="res://scenes/niveles/celda.gd" id="6"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D"]
+normal = Vector2(-0.929598, -0.368576)
+distance = -46.9335
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D"]
+size = Vector2(20, 768)
+
+[node name="Nivel4" type="Node2D" node_paths=PackedStringArray("nodo_enemigos_puntos")]
+script = ExtResource("1")
+nodo_enemigos_puntos = NodePath("EnemigosPosicionesSalida")
+nivel_numero = 4
+nivel_nombre = "Monte chaqueño"
+proximo_nivel = "res://scenes/niveles/nivel1/nivel1.tscn"
+
+[node name="Fondo" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1366, 768)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1366.0
+offset_bottom = 768.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+expand_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -12.0
+autoplay = true
+bus = &"Music"
+
+[node name="Hud" parent="." instance=ExtResource("4")]
+
+[node name="EnemigosTimer" type="Timer" parent="."]
+
+[node name="EnemigosPosicionesSalida" type="Node2D" parent="."]
+
+[node name="Marker2D1" type="Marker2D" parent="EnemigosPosicionesSalida"]
+position = Vector2(1330, 287)
+
+[node name="Marker2D2" type="Marker2D" parent="EnemigosPosicionesSalida"]
+position = Vector2(1330, 341)
+
+[node name="Marker2D3" type="Marker2D" parent="EnemigosPosicionesSalida"]
+position = Vector2(1330, 390)
+
+[node name="Marker2D4" type="Marker2D" parent="EnemigosPosicionesSalida"]
+position = Vector2(1330, 454)
+
+[node name="Marker2D5" type="Marker2D" parent="EnemigosPosicionesSalida"]
+position = Vector2(1330, 535)
+
+[node name="PerderArea" type="Area2D" parent="."]
+position = Vector2(187, 437)
+rotation = -3.0836482
+collision_layer = 17
+collision_mask = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PerderArea"]
+shape = SubResource("WorldBoundaryShape2D")
+metadata/_edit_lock_ = true
+
+[node name="FueraPantallaArea" type="Area2D" parent="." groups=["pantalla"]]
+collision_layer = 128
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FueraPantallaArea"]
+position = Vector2(1400, 384)
+shape = SubResource("RectangleShape2D")
+
+[node name="Grilla" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("5")
+metadata/_edit_lock_ = true
+
+[node name="Fila_1_Col_0" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 267.0
+offset_top = 277.0
+offset_right = 387.0
+offset_bottom = 335.0
+script = ExtResource("6")
+row = 0
+col = 0
+metadata/_edit_lock_ = true

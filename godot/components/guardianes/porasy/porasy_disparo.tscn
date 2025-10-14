@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcsv8xbca8ckw"]
+
+[ext_resource type="Script" uid="uid://d10efoo0vurh3" path="res://components/guardianes/porasy/porasy_disparo.gd" id="1_logl0"]
+[ext_resource type="Texture2D" uid="uid://yj4j75q0w12u" path="res://assets/guardianes/rubi-disparo.png" id="2_1kcrh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yflqx"]
+
+[node name="RubiDisparo" type="Area2D"]
+collision_layer = 20
+collision_mask = 136
+script = ExtResource("1_logl0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_1kcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yflqx")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

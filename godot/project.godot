@@ -1,0 +1,60 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Rubí - Guardianes del NEA"
+config/description="Adaptación de mitologías del litoral Argentino, al tipo \"Plants vs Zombies\" desarrollado en Godot Engine 4.5.
+Desarrollado durante el cursado de VJ-GDT-01-25 - Desarrollo de Videojuegos con Godot."
+config/version="0.0.2"
+run/main_scene="uid://dorjpv7e8xr3k"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://ca6qyia5ykyc4"
+config/icon="uid://cxw8hn57d2nnw"
+boot_splash/minimum_display_time=1000
+
+[autoload]
+
+GameManager="*res://scripts/game_manager.gd"
+GameSettings="*res://scripts/game_settings.gd"
+
+[display]
+
+window/size/viewport_width=1366
+window/size/viewport_height=768
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+
+[global_group]
+
+enemies="Se agrupan los enemigos del juego"
+pantalla="Se agrupan los elementos de pantalla"
+
+[gui]
+
+theme/custom="uid://0i5khx1o2oh7"
+
+[layer_names]
+
+2d_physics/layer_1="Terreno"
+2d_physics/layer_2="Ambiente"
+2d_physics/layer_3="Guardianes"
+2d_physics/layer_4="Enemigos"
+2d_physics/layer_5="GuardianesDisparos"
+2d_physics/layer_6="EnemigosDisparos"
+2d_physics/layer_7="Interactivos"
+2d_physics/layer_8="Pantalla"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

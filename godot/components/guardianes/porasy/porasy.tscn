@@ -1,0 +1,108 @@
+[gd_scene load_steps=13 format=3 uid="uid://bco81yi5b1tl1"]
+
+[ext_resource type="Script" uid="uid://caakm8hgs0coq" path="res://components/guardianes/porasy/porasy.gd" id="1_7vckp"]
+[ext_resource type="Texture2D" uid="uid://dsb5kyh6mhxmm" path="res://assets/guardianes/porasy-atlas.png" id="5_dh0ys"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c14q5"]
+atlas = ExtResource("5_dh0ys")
+region = Rect2(0, 180, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vckp"]
+atlas = ExtResource("5_dh0ys")
+region = Rect2(0, 360, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh0ys"]
+atlas = ExtResource("5_dh0ys")
+region = Rect2(180, 360, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m53m5"]
+atlas = ExtResource("5_dh0ys")
+region = Rect2(360, 360, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7i76"]
+atlas = ExtResource("5_dh0ys")
+region = Rect2(0, 0, 180, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mtnfp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c14q5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vckp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh0ys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m53m5")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7i76")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wshmw"]
+size = Vector2(72, 112)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s7tyc"]
+font_size = 20
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57drq"]
+bg_color = Color(0.705882, 0, 0.117647, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oj04"]
+bg_color = Color(0, 0.705882, 0.117647, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Porasy" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_7vckp")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mtnfp")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 20)
+shape = SubResource("RectangleShape2D_wshmw")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -62.0
+offset_top = -144.0
+offset_right = 64.0
+offset_bottom = -121.0
+text = "Porãsy"
+label_settings = SubResource("LabelSettings_s7tyc")
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -64.0
+offset_top = -116.0
+offset_right = 64.0
+offset_bottom = -98.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_57drq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3oj04")
+value = 50.0
+show_percentage = false

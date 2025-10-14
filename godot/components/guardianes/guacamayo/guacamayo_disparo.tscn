@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://gjrjniqwgldk"]
+
+[ext_resource type="Script" uid="uid://c8npn6d2sidoj" path="res://components/guardianes/guacamayo/guacamayo_disparo.gd" id="1_1bbl1"]
+[ext_resource type="Texture2D" uid="uid://cvxqp8frktwa1" path="res://assets/guardianes/peque-disparo.png" id="2_ehwld"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehwld"]
+atlas = ExtResource("2_ehwld")
+region = Rect2(0, 0, 108, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_exsbe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehwld")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yflqx"]
+
+[sub_resource type="Animation" id="Animation_ehwld"]
+resource_name = "default"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.033333335, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(0.7, 0.7), Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="Animation" id="Animation_exsbe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0bbiu"]
+_data = {
+&"RESET": SubResource("Animation_exsbe"),
+&"default": SubResource("Animation_ehwld")
+}
+
+[node name="PequeDisparo" type="Area2D"]
+collision_layer = 20
+collision_mask = 136
+script = ExtResource("1_1bbl1")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_exsbe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(21, 0)
+shape = SubResource("CircleShape2D_yflqx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0bbiu")
+}
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

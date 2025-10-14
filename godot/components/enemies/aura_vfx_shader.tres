@@ -1,0 +1,31 @@
+[gd_resource type="Shader" format=3 uid="uid://wnuebg35coie"]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform vec4 tint : source_color;
+uniform float base_alpha = 0.15;
+uniform float pulse_amp = 0.1;
+uniform float pulse_speed = 1.2;
+uniform float highlight = 0.0; // 0..1
+
+// Ring ripple controls
+uniform float ring_amp = 0.25;
+uniform float ring_speed = 0.6;
+uniform float ring_freq = 1.0;
+uniform float ring_width = 0.15;
+
+void fragment(){
+    // Base pulsation
+    float t = TIME * pulse_speed;
+    float a = base_alpha + sin(t) * pulse_amp;
+    // Ring ripple based on distance from center (UV in [0,1])
+    vec2 c = UV - vec2(0.5);
+    float d = length(c) * 2.0; // 0..~1 at edge of circle texture
+    float wave = fract(d * ring_freq - TIME * ring_speed);
+    float ring = smoothstep(1.0 - ring_width, 1.0, wave) - smoothstep(1.0, 1.0 + ring_width, wave);
+    a += ring * ring_amp;
+    // Highlight when projectiles are inside
+    a = clamp(a + highlight * 0.25, 0.03, 0.8);
+    COLOR = vec4(tint.rgb, a);
+}"

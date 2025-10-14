@@ -1,0 +1,539 @@
+[gd_scene load_steps=8 format=3 uid="uid://ciupju48wqmy6"]
+
+[ext_resource type="Script" uid="uid://dp23um6eopw7p" path="res://scenes/niveles/nivel2/nivel2.gd" id="1_r2cmx"]
+[ext_resource type="Texture2D" uid="uid://jjjttnxhl1n8" path="res://assets/niveles/nivel2.png" id="2_o066t"]
+[ext_resource type="PackedScene" uid="uid://1oo3n8htxfu3" path="res://scenes/niveles/hud.tscn" id="3_xltu8"]
+[ext_resource type="Script" uid="uid://br8vhkrpnwf0j" path="res://scenes/niveles/nivel2/nivel2_grilla.gd" id="12_i2t6k"]
+[ext_resource type="Script" uid="uid://4skynsdb43r" path="res://scenes/niveles/celda.gd" id="13_puna5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_27y2h"]
+normal = Vector2(-0.929598, -0.368576)
+distance = -46.9335
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2mk4e"]
+size = Vector2(20, 768)
+
+[node name="Nivel2" type="Node2D" node_paths=PackedStringArray("nodo_enemigos_puntos")]
+script = ExtResource("1_r2cmx")
+nodo_enemigos_puntos = NodePath("EnemigosPosicionesSalida")
+nivel_numero = 2
+nivel_nombre = "Los Esteros del Iberá"
+proximo_nivel = "res://scenes/niveles/nivel3/nivel3.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1366, 768)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1366.0
+offset_bottom = 768.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_o066t")
+expand_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+autoplay = true
+bus = &"Music"
+
+[node name="Hud" parent="." instance=ExtResource("3_xltu8")]
+
+[node name="EnemigosTimer" type="Timer" parent="."]
+
+[node name="EnemigosPosicionesSalida" type="Node2D" parent="."]
+
+[node name="Marker2D1" type="Marker2D" parent="EnemigosPosicionesSalida"]
+position = Vector2(1330, 287)
+
+[node name="Marker2D2" type="Marker2D" parent="EnemigosPosicionesSalida"]
+position = Vector2(1330, 341)
+
+[node name="Marker2D3" type="Marker2D" parent="EnemigosPosicionesSalida"]
+position = Vector2(1330, 390)
+
+[node name="Marker2D4" type="Marker2D" parent="EnemigosPosicionesSalida"]
+position = Vector2(1330, 454)
+
+[node name="Marker2D5" type="Marker2D" parent="EnemigosPosicionesSalida"]
+position = Vector2(1330, 535)
+
+[node name="PerderArea" type="Area2D" parent="."]
+position = Vector2(187, 437)
+rotation = -3.0836482
+collision_layer = 17
+collision_mask = 8
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PerderArea"]
+shape = SubResource("WorldBoundaryShape2D_27y2h")
+metadata/_edit_lock_ = true
+
+[node name="FueraPantallaArea" type="Area2D" parent="." groups=["pantalla"]]
+collision_layer = 128
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FueraPantallaArea"]
+position = Vector2(1400, 384)
+shape = SubResource("RectangleShape2D_2mk4e")
+
+[node name="Grilla" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("12_i2t6k")
+metadata/_edit_lock_ = true
+
+[node name="Fila_1_Col_0" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 267.0
+offset_top = 277.0
+offset_right = 387.0
+offset_bottom = 335.0
+script = ExtResource("13_puna5")
+row = 0
+col = 0
+metadata/_edit_lock_ = true
+
+[node name="Fila_1_Col_1" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 388.0
+offset_top = 277.0
+offset_right = 506.0
+offset_bottom = 335.0
+script = ExtResource("13_puna5")
+row = 0
+col = 1
+metadata/_edit_lock_ = true
+
+[node name="Fila_1_Col_2" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 508.0
+offset_top = 277.0
+offset_right = 618.0
+offset_bottom = 335.0
+script = ExtResource("13_puna5")
+row = 0
+col = 2
+metadata/_edit_lock_ = true
+
+[node name="Fila_1_Col_3" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 618.0
+offset_top = 277.0
+offset_right = 734.0
+offset_bottom = 335.0
+script = ExtResource("13_puna5")
+row = 0
+col = 3
+metadata/_edit_lock_ = true
+
+[node name="Fila_1_Col_4" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 736.0
+offset_top = 277.0
+offset_right = 856.0
+offset_bottom = 335.0
+script = ExtResource("13_puna5")
+row = 0
+col = 4
+metadata/_edit_lock_ = true
+
+[node name="Fila_1_Col_5" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 857.0
+offset_top = 277.0
+offset_right = 973.0
+offset_bottom = 335.0
+script = ExtResource("13_puna5")
+row = 0
+col = 5
+metadata/_edit_lock_ = true
+
+[node name="Fila_1_Col_6" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 0
+offset_left = 973.0
+offset_top = 277.0
+offset_right = 1093.0
+offset_bottom = 335.0
+script = ExtResource("13_puna5")
+row = 0
+col = 6
+metadata/_edit_lock_ = true
+
+[node name="Fila_2_Col_0" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 216.0
+offset_top = 341.0
+offset_right = 350.0
+offset_bottom = 385.0
+script = ExtResource("13_puna5")
+row = 1
+col = 0
+metadata/_edit_lock_ = true
+
+[node name="Fila_2_Col_1" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 354.0
+offset_top = 341.0
+offset_right = 478.0
+offset_bottom = 385.0
+script = ExtResource("13_puna5")
+row = 1
+col = 1
+metadata/_edit_lock_ = true
+
+[node name="Fila_2_Col_2" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 480.0
+offset_top = 341.0
+offset_right = 609.0
+offset_bottom = 385.0
+script = ExtResource("13_puna5")
+row = 1
+col = 2
+metadata/_edit_lock_ = true
+
+[node name="Fila_2_Col_3" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 613.0
+offset_top = 341.0
+offset_right = 740.0
+offset_bottom = 385.0
+script = ExtResource("13_puna5")
+row = 1
+col = 3
+metadata/_edit_lock_ = true
+
+[node name="Fila_2_Col_4" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 743.0
+offset_top = 341.0
+offset_right = 870.0
+offset_bottom = 385.0
+script = ExtResource("13_puna5")
+row = 1
+col = 4
+metadata/_edit_lock_ = true
+
+[node name="Fila_2_Col_5" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 872.0
+offset_top = 341.0
+offset_right = 996.0
+offset_bottom = 385.0
+script = ExtResource("13_puna5")
+row = 1
+col = 5
+metadata/_edit_lock_ = true
+
+[node name="Fila_2_Col_6" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 998.0
+offset_top = 341.0
+offset_right = 1138.0
+offset_bottom = 385.0
+script = ExtResource("13_puna5")
+row = 1
+col = 6
+metadata/_edit_lock_ = true
+
+[node name="Fila_3_Col_0" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 161.0
+offset_top = 390.0
+offset_right = 307.0
+offset_bottom = 446.0
+script = ExtResource("13_puna5")
+row = 2
+col = 0
+metadata/_edit_lock_ = true
+
+[node name="Fila_3_Col_1" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 309.0
+offset_top = 390.0
+offset_right = 455.0
+offset_bottom = 446.0
+script = ExtResource("13_puna5")
+row = 2
+col = 1
+metadata/_edit_lock_ = true
+
+[node name="Fila_3_Col_2" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 456.0
+offset_top = 390.0
+offset_right = 602.0
+offset_bottom = 446.0
+script = ExtResource("13_puna5")
+row = 2
+col = 2
+metadata/_edit_lock_ = true
+
+[node name="Fila_3_Col_3" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 604.0
+offset_top = 390.0
+offset_right = 750.0
+offset_bottom = 446.0
+script = ExtResource("13_puna5")
+row = 2
+col = 3
+metadata/_edit_lock_ = true
+
+[node name="Fila_3_Col_4" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 750.0
+offset_top = 390.0
+offset_right = 896.0
+offset_bottom = 446.0
+script = ExtResource("13_puna5")
+row = 2
+col = 4
+metadata/_edit_lock_ = true
+
+[node name="Fila_3_Col_5" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 896.0
+offset_top = 390.0
+offset_right = 1042.0
+offset_bottom = 446.0
+script = ExtResource("13_puna5")
+row = 2
+col = 5
+metadata/_edit_lock_ = true
+
+[node name="Fila_3_Col_6" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 390.0
+offset_right = 1186.0
+offset_bottom = 446.0
+script = ExtResource("13_puna5")
+row = 2
+col = 6
+metadata/_edit_lock_ = true
+
+[node name="Fila_4_Col_0" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 96.0
+offset_top = 447.0
+offset_right = 264.0
+offset_bottom = 525.0
+script = ExtResource("13_puna5")
+row = 3
+col = 0
+metadata/_edit_lock_ = true
+
+[node name="Fila_4_Col_1" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 267.0
+offset_top = 447.0
+offset_right = 435.0
+offset_bottom = 525.0
+script = ExtResource("13_puna5")
+row = 3
+col = 1
+metadata/_edit_lock_ = true
+
+[node name="Fila_4_Col_2" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 436.0
+offset_top = 447.0
+offset_right = 604.0
+offset_bottom = 525.0
+script = ExtResource("13_puna5")
+row = 3
+col = 2
+metadata/_edit_lock_ = true
+
+[node name="Fila_4_Col_3" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 596.0
+offset_top = 447.0
+offset_right = 764.0
+offset_bottom = 525.0
+script = ExtResource("13_puna5")
+row = 3
+col = 3
+metadata/_edit_lock_ = true
+
+[node name="Fila_4_Col_4" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 758.0
+offset_top = 447.0
+offset_right = 926.0
+offset_bottom = 525.0
+script = ExtResource("13_puna5")
+row = 3
+col = 4
+metadata/_edit_lock_ = true
+
+[node name="Fila_4_Col_5" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 926.0
+offset_top = 447.0
+offset_right = 1084.0
+offset_bottom = 525.0
+script = ExtResource("13_puna5")
+row = 3
+col = 5
+metadata/_edit_lock_ = true
+
+[node name="Fila_4_Col_6" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 1086.0
+offset_top = 447.0
+offset_right = 1254.0
+offset_bottom = 525.0
+script = ExtResource("13_puna5")
+row = 3
+col = 6
+metadata/_edit_lock_ = true
+
+[node name="Fila_5_Col_0" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 54.0
+offset_top = 535.0
+offset_right = 214.0
+offset_bottom = 625.0
+script = ExtResource("13_puna5")
+row = 4
+col = 0
+metadata/_edit_lock_ = true
+
+[node name="Fila_5_Col_1" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 218.0
+offset_top = 535.0
+offset_right = 390.0
+offset_bottom = 625.0
+script = ExtResource("13_puna5")
+row = 4
+col = 1
+metadata/_edit_lock_ = true
+
+[node name="Fila_5_Col_2" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 392.0
+offset_top = 535.0
+offset_right = 572.0
+offset_bottom = 625.0
+script = ExtResource("13_puna5")
+row = 4
+col = 2
+metadata/_edit_lock_ = true
+
+[node name="Fila_5_Col_3" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 578.0
+offset_top = 535.0
+offset_right = 758.0
+offset_bottom = 625.0
+script = ExtResource("13_puna5")
+row = 4
+col = 3
+metadata/_edit_lock_ = true
+
+[node name="Fila_5_Col_4" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 764.0
+offset_top = 535.0
+offset_right = 944.0
+offset_bottom = 625.0
+script = ExtResource("13_puna5")
+row = 4
+col = 4
+metadata/_edit_lock_ = true
+
+[node name="Fila_5_Col_5" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 950.0
+offset_top = 535.0
+offset_right = 1130.0
+offset_bottom = 625.0
+script = ExtResource("13_puna5")
+row = 4
+col = 5
+metadata/_edit_lock_ = true
+
+[node name="Fila_5_Col_6" type="Panel" parent="Grilla"]
+modulate = Color(0.0156863, 0.0156863, 0.0156863, 0.196078)
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+offset_left = 1130.0
+offset_top = 535.0
+offset_right = 1310.0
+offset_bottom = 625.0
+script = ExtResource("13_puna5")
+row = 4
+col = 6
+metadata/_edit_lock_ = true
